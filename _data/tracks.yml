@@ -1,0 +1,80 @@
+# One place to update progress. status: covered | touched | upcoming
+# "edition" is the edition number where it was covered or touched.
+maths:
+  - name: Vectors and amplitudes
+    what: Two numbers that describe one qubit. Length is always 1.
+    why: Every qubit state is a vector. Everything else is built on this.
+    status: covered
+    edition: 1
+  - name: Probability and squaring
+    what: Probability equals amplitude squared.
+    why: It is how an angle turns into odds, and why negative numbers are allowed.
+    status: covered
+    edition: 1
+  - name: Complex numbers
+    what: Numbers with a direction, not just a size.
+    why: Phase lives here. Without it the Bloch sphere is only a circle.
+    status: upcoming
+  - name: Matrices as gates
+    what: A small grid of numbers that rotates a vector.
+    why: Every quantum gate is a matrix. Applying a gate is a multiplication.
+    status: upcoming
+  - name: Inner products and Dirac notation
+    what: The bra-ket shorthand and what overlap means.
+    why: It is the notation every paper uses, and overlap is how you read off probabilities.
+    status: upcoming
+  - name: Tensor products
+    what: How two small vectors become one bigger one.
+    why: Two qubits are not two lists of two; they are one list of four.
+    status: upcoming
+  - name: Unitary matrices and reversibility
+    what: Rotations that keep length at 1.
+    why: Quantum computation is reversible. Unitaries are the reason.
+    status: upcoming
+  - name: Eigenvalues and measurement
+    what: The directions a matrix leaves alone.
+    why: Measuring is asking which eigen-direction the state picked.
+    status: upcoming
+
+concepts:
+  - name: Bit versus qubit
+    what: A switch versus an arrow.
+    status: covered
+    edition: 1
+  - name: Superposition
+    what: The arrow tilted between 0 and 1.
+    status: covered
+    edition: 1
+  - name: Measurement
+    what: The arrow snaps, and you get one bit.
+    status: covered
+    edition: 1
+  - name: The Bloch sphere
+    what: The picture of one qubit as an arrow on a ball.
+    status: touched
+    edition: 1
+  - name: Interference
+    what: Doing a thing twice can undo randomness.
+    status: touched
+    edition: 1
+  - name: Phase
+    what: The direction around the equator.
+    status: upcoming
+  - name: Single-qubit gates
+    what: Rotations, written as matrices.
+    status: upcoming
+  - name: Two qubits
+    what: Four amplitudes, not two pairs.
+    status: upcoming
+  - name: Entanglement
+    what: Two arrows that cannot be described one at a time.
+    status: upcoming
+  - name: Decoherence and noise
+    what: Why the arrow drifts, and how fast.
+    status: upcoming
+  - name: Error correction
+    what: Many physical qubits standing in for one reliable one.
+    status: upcoming
+  - name: Physical qubits
+    what: Superconducting, trapped ion, neutral atom, photon. How each one is built.
+    status: upcoming

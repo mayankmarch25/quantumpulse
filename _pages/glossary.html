@@ -1,0 +1,15 @@
+---
+title: Glossary
+description: Plain-English definitions of the quantum terms used on this site, each tagged with the edition where it first appears.
+permalink: /glossary/
+---
+<section class="wrap sec">
+  <p class="eyebrow">PLAIN ENGLISH · GROWS WITH EVERY EDITION</p>
+  <h1 class="sec-title">Glossary</h1>
+  <p class="sec-sub" style="margin-bottom:22px">One sentence each, in the words the editions use. A term is added the week it first appears.</p>
+  <dl class="gloss">
+    {% for g in site.data.glossary %}
+    <div><dt>{{ g.term }}</dt><dd>{{ g.def }}</dd><span class="g-ed">{{ g.tag }}</span></div>
+    {% endfor %}
+  </dl>
+</section>

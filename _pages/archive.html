@@ -1,0 +1,22 @@
+---
+title: All editions
+permalink: /archive/
+---
+<section class="wrap sec">
+  <p class="eyebrow">THE FULL ARCHIVE</p>
+  <h1 class="sec-title">Every edition of {{ site.title }}</h1>
+  <p class="sec-sub" style="margin-bottom:22px">Newest first. Each edition names the concept it covers and the maths it uses.</p>
+  <ul class="archive-list">
+    {% for post in site.posts %}
+    <li class="archive-item">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        <span class="ai-ed">ED. {{ post.edition }}</span>
+        <span>
+          <span class="ai-title">{{ post.title }}</span>
+          <span class="ai-meta">{{ post.date | date: "%b %-d, %Y" }} · {{ post.category }}{% if post.maths %} · Maths: {{ post.maths | join: ", " }}{% endif %}</span>
+        </span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

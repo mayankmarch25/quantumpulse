@@ -1,0 +1,18 @@
+# Quantum Pulse
+
+> A public learning notebook on quantum computing, communication and sensing, written by Mayank Madhur. Each edition takes one core concept and the single piece of maths it needs, and explains it with interactive figures rather than prose. Published every Tuesday. Not written by an expert; written by a learner, with corrections printed in place.
+
+Site: https://YOUR-USERNAME.github.io
+Author: Mayank Madhur, Chennai, India. Contact: mayank@mayankmadhur.in
+Sister publication: Healthcare Pulse, https://mayankmadhur.in
+
+## Structure
+
+- [The maths you need](https://YOUR-USERNAME.github.io/maths/): eight topics, each unlocked by the edition that first uses it.
+- [The core concepts](https://YOUR-USERNAME.github.io/concepts/): twelve ideas in dependency order, from bit to error correction.
+- [Glossary](https://YOUR-USERNAME.github.io/glossary/): one-sentence plain-English definitions, each tagged with the edition where it first appears.
+- [All editions](https://YOUR-USERNAME.github.io/archive/)
+
+## Editions
+
+- [Edition 1: A bit, a coin and a qubit](https://YOUR-USERNAME.github.io/editions/a-bit-a-coin-and-a-qubit/): A bit is a switch, a coin is a probability, a qubit is an arrow. Six interactive figures (bit switch, coin tally, qubit angle slider, measurement with tally, coin-versus-qubit interference, π pulse) and the two rules of the maths: a² + b² = 1, and probability equals amplitude squared.

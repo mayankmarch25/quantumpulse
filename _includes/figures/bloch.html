@@ -1,0 +1,29 @@
+{% assign mode = include.mode | default: "slider" %}{% assign angle = include.angle | default: 60 %}
+<div class="fig" data-fig="bloch" data-mode="{{ mode }}" data-angle="{{ angle }}">
+<div class="fig-head"><b>FIGURE {{ include.num }}</b><span>{{ include.title }}</span></div>
+<div class="fig-row r3">
+<div data-role="stage"></div>
+<div>
+<div class="slider">
+<label>{% if mode == "measure" %}set the angle, then measure{% else %}angle from the top{% endif %} <output data-role="deg">{{ angle }}°</output></label>
+<input type="range" data-role="range" min="0" max="180" value="{{ angle }}" step="1" aria-label="Arrow angle">
+</div>
+{% if mode == "measure" %}
+<div class="ctrl">
+<button class="btn primary" type="button" data-act="m1">Measure once</button>
+<button class="btn" type="button" data-act="m50">Measure 50 fresh copies</button>
+<button class="btn" type="button" data-act="reset">Reset</button>
+</div>
+<div class="tally"><div>got 0<b data-role="t0">0</b></div><div>got 1<b data-role="t1">0</b></div></div>
+<p class="readout">expected share of 1s at this angle: <b data-role="exp">–</b> · observed: <b data-role="obs">–</b></p>
+{% else %}
+<div class="bars" style="margin-top:14px">
+<div class="bar"><span>0</span><div class="track"><div class="fill" data-role="b0"></div></div><span class="val" data-role="v0">–</span></div>
+<div class="bar one"><span>1</span><div class="track"><div class="fill" data-role="b1"></div></div><span class="val" data-role="v1">–</span></div>
+</div>
+<p class="readout">amplitudes: a = <b data-role="a">–</b>, b = <b data-role="b">–</b><br>probabilities: a² = <b data-role="a2">–</b>, b² = <b data-role="b2">–</b></p>
+{% endif %}
+</div>
+</div>
+{% if include.caption %}<p class="fig-cap">{{ include.caption }}</p>{% endif %}
+</div>

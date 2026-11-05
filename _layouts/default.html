@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include head.html %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.title }}",
+  "url": "{{ site.url }}{{ site.baseurl }}/",
+  "description": "{{ site.description }}",
+  "inLanguage": "en",
+  "author": { "@type": "Person", "name": "{{ site.author }}", "url": "{{ site.linkedin_profile }}" }
+}
+</script>
+</head>
+<body>
+{% include header.html %}
+<main>{{ content }}</main>
+{% include footer.html %}
+</body>
+</html>

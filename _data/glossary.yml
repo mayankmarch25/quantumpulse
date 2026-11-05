@@ -1,0 +1,49 @@
+# One entry per term. tag examples: "ED. 1", "ED. 1 · INTRODUCED", "NOT YET COVERED"
+- term: Bit
+  def: A switch that is either 0 or 1. You can read it as often as you like without changing it.
+  tag: ED. 1
+- term: Qubit
+  def: An arrow that can point to 0, to 1, or anywhere between. Reading it forces it to pick one.
+  tag: ED. 1
+- term: Superposition
+  def: The arrow tilted between 0 and 1. Not “both at once”; a definite direction that is neither end.
+  tag: ED. 1
+- term: Amplitude
+  def: One of the two numbers that describe where the arrow points. Can be negative. Squares to a probability.
+  tag: ED. 1
+- term: Probability
+  def: How often a result shows up over many tries. For a qubit, it is the amplitude squared.
+  tag: ED. 1
+- term: Measurement
+  def: Looking at the qubit. The arrow snaps to 0 or 1, you get one bit, and the angle is gone.
+  tag: ED. 1
+- term: Bloch sphere
+  def: The picture of one qubit as an arrow from the centre of a ball to its surface. Up is 0, down is 1.
+  tag: ED. 1 · INTRODUCED
+- term: Interference
+  def: When two routes to the same result cancel or reinforce. It is why a half-turn done twice can undo randomness.
+  tag: ED. 1 · INTRODUCED
+- term: Pulse
+  def: A short burst of microwave or laser energy that rotates the arrow. A full rotation from 0 to 1 is a π pulse.
+  tag: ED. 1 · INTRODUCED
+- term: Hadamard
+  def: The gate that takes 0 to the equator. Done twice, it returns to 0.
+  tag: ED. 1 · NAMED ONLY
+- term: Phase
+  def: The direction the arrow points around the equator. Invisible to a plain measurement, essential to interference.
+  tag: NOT YET COVERED
+- term: Gate
+  def: A rotation applied to one or more arrows. Written as a matrix; applied as a pulse.
+  tag: NOT YET COVERED
+- term: Entanglement
+  def: Two arrows that cannot be described separately, so measuring one tells you about the other.
+  tag: NOT YET COVERED
+- term: Decoherence
+  def: The arrow drifting on its own because the outside world leaks in. Measured in microseconds to seconds.
+  tag: NOT YET COVERED
+- term: Physical qubit
+  def: One actual hardware arrow, such as a superconducting circuit, a trapped ion, an atom or a photon. Noisy.
+  tag: NOT YET COVERED
+- term: Logical qubit
+  def: One reliable arrow built from many physical ones, with errors caught and corrected. The number that matters.
+  tag: NOT YET COVERED

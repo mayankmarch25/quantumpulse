@@ -1,0 +1,133 @@
+---
+layout: default
+---
+{% assign m_cov = site.data.tracks.maths | where: "status", "covered" | size %}
+{% assign m_all = site.data.tracks.maths | size %}
+{% assign c_cov = site.data.tracks.concepts | where: "status", "covered" | size %}
+{% assign c_tou = site.data.tracks.concepts | where: "status", "touched" | size %}
+{% assign c_all = site.data.tracks.concepts | size %}
+{% assign p = site.posts.first %}
+<section class="wrap hero">
+  <div class="hero-left">
+    <p class="eyebrow">COMPUTING · COMMUNICATION · SENSING · LEARNED FROM ZERO, IN PUBLIC</p>
+    <h1 class="hero-title">Quantum, <span class="hi-grad">decoded</span>.</h1>
+    <svg class="hero-pulse" viewBox="0 0 600 70" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <pattern id="pg" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0 L0 0 0 20" fill="none" class="pulse-grid" stroke-width=".6"/></pattern>
+        <path id="pp" d="M0 40.0 L2 40.0 L4 40.0 L6 40.0 L8 40.0 L10 40.01 L12 40.01 L14 40.0 L16 39.99 L18 39.99 L20 39.99 L22 40.01 L24 40.03 L26 40.03 L28 40.0 L30 39.96 L32 39.93 L34 39.96 L36 40.04 L38 40.12 L40 40.12 L42 40.0 L44 39.83 L46 39.75 L48 39.87 L50 40.16 L52 40.43 L54 40.41 L56 40.0 L58 39.44 L60 39.18 L62 39.57 L64 40.5 L66 41.29 L68 41.19 L70 40.0 L72 38.42 L74 37.76 L76 38.86 L78 41.29 L80 43.28 L82 42.96 L84 40.0 L86 36.28 L88 34.82 L90 37.44 L92 42.84 L94 47.03 L96 46.2 L98 40.0 L100 32.58 L102 29.92 L104 35.14 L106 45.26 L108 52.73 L110 50.96 L112 40.0 L114 27.5 L116 23.44 L118 32.2 L120 48.23 L122 59.45 L124 56.34 L126 40.0 L128 22.24 L130 17.04 L132 29.44 L134 50.88 L136 65.08 L138 60.57 L140 40.0 L142 18.71 L144 13.12 L146 27.94 L148 52.13 L150 67.3 L152 61.85 L154 40.0 L156 18.45 L158 13.45 L160 28.37 L162 51.42 L164 65.08 L166 59.6 L168 40.0 L170 21.59 L172 17.86 L174 30.53 L176 49.07 L178 59.45 L180 54.83 L182 40.0 L184 26.72 L186 24.42 L188 33.49 L190 46.08 L192 52.73 L194 49.48 L196 40.0 L198 31.92 L200 30.74 L202 36.23 L204 43.44 L206 47.03 L208 45.11 L210 40.0 L212 35.85 L214 35.36 L216 38.15 L218 41.64 L220 43.28 L222 42.33 L224 40.0 L226 38.2 L228 38.03 L230 39.24 L232 40.66 L234 41.29 L236 40.89 L238 40.0 L240 39.34 L242 39.29 L244 39.73 L246 40.23 L248 40.44 L250 40.3 L252 40.0 L254 39.79 L256 39.77 L258 39.91 L260 40.08 L262 40.15 L264 40.11 L266 40.0 L268 39.9 L270 39.87 L272 39.94 L274 40.06 L276 40.16 L278 40.14 L280 40.0 L282 39.82 L284 39.73 L286 39.86 L288 40.16 L290 40.42 L292 40.39 L294 40.0 L296 39.48 L298 39.25 L300 39.62 L302 40.44 L304 41.12 L306 41.03 L308 40.0 L310 38.69 L312 38.15 L314 39.08 L316 41.03 L318 42.59 L320 42.31 L322 40.0 L324 37.18 L326 36.13 L328 38.11 L330 42.06 L332 45.04 L334 44.38 L336 40.0 L338 34.9 L340 33.17 L342 36.75 L344 43.47 L346 48.28 L348 47.03 L350 40.0 L352 32.2 L354 29.81 L356 35.27 L358 44.93 L360 51.48 L362 49.51 L364 40.0 L366 29.94 L368 27.18 L370 34.18 L372 45.91 L374 53.44 L376 50.87 L378 40.0 L380 29.05 L382 26.37 L384 33.97 L386 45.98 L388 53.28 L390 50.48 L392 40.0 L394 29.94 L396 27.78 L398 34.72 L400 45.11 L402 51.07 L404 48.53 L406 40.0 L408 32.2 L410 30.75 L412 36.1 L414 43.68 L416 47.79 L418 45.86 L420 40.0 L422 34.9 L424 34.09 L426 37.57 L428 42.24 L430 44.63 L432 43.4 L434 40.0 L436 37.18 L438 36.81 L440 38.72 L442 41.15 L444 42.32 L446 41.66 L448 40.0 L450 38.69 L452 38.55 L454 39.43 L456 40.5 L458 40.98 L460 40.69 L462 40.0 L464 39.48 L466 39.44 L468 39.79 L470 40.18 L472 40.35 L474 40.24 L476 40.0 L478 39.83 L480 39.82 L482 37.4 L484 42.6 L486 40.0 L488 37.4 L490 42.6 L492 40.0 L494 37.4 L496 42.6 L498 40.0 L500 37.4 L502 42.6 L504 40.0 L506 37.4 L508 42.6 L510 40.0 L512 37.4 L514 42.6 L516 40.0 L518 37.4 L520 42.6 L522 40.0 L524 37.4 L526 42.6 L528 40.0 L530 37.4 L532 42.6 L534 40.0 L536 37.4 L538 42.6 L540 40.0 L542 37.4 L544 42.6 L546 40.0 L548 37.4 L550 42.6 L552 40.0 L554 37.4 L556 42.6 L558 40.0 L560 37.4 L562 42.6 L564 40.0 L566 37.4 L568 42.6 L570 40.0 L572 37.4 L574 42.6 L576 40.0 L578 37.4 L580 42.6 L582 40.0 L584 37.4 L586 42.6 L588 40.0 L590 37.4 L592 42.6 L594 40.0 L596 37.4 L598 42.6 L600 40.0"/>
+      </defs>
+      <rect width="600" height="70" fill="url(#pg)"/>
+      <path d="M0 40.0 L4 40.0 L8 40.0 L12 39.99 L16 39.99 L20 39.98 L24 39.97 L28 39.96 L32 39.93 L36 39.9 L40 39.85 L44 39.78 L48 39.69 L52 39.56 L56 39.39 L60 39.16 L64 38.86 L68 38.47 L72 37.98 L76 37.38 L80 36.64 L84 35.74 L88 34.69 L92 33.46 L96 32.07 L100 30.5 L104 28.79 L108 26.94 L112 25.01 L116 23.02 L120 21.03 L124 19.1 L128 17.29 L132 15.66 L136 14.28 L140 13.19 L144 12.43 L148 12.05 L152 12.05 L156 12.43 L160 13.19 L164 14.28 L168 15.66 L172 17.29 L176 19.1 L180 21.03 L184 23.02 L188 25.01 L192 26.94 L196 28.79 L200 30.5 L204 32.07 L208 33.46 L212 34.69 L216 35.74 L220 36.64 L224 37.38 L228 37.98 L232 38.47 L236 38.86 L240 39.15 L244 39.38 L248 39.55 L252 39.68 L256 39.76 L260 39.82 L264 39.86 L268 39.87 L272 39.87 L276 39.84 L280 39.8 L284 39.73 L288 39.63 L292 39.5 L296 39.34 L300 39.12 L304 38.85 L308 38.51 L312 38.1 L316 37.62 L320 37.05 L324 36.39 L328 35.65 L332 34.83 L336 33.94 L340 32.99 L344 32.01 L348 31.01 L352 30.03 L356 29.09 L360 28.22 L364 27.47 L368 26.85 L372 26.38 L376 26.1 L380 26.0 L384 26.1 L388 26.38 L392 26.85 L396 27.47 L400 28.22 L404 29.09 L408 30.03 L412 31.01 L416 32.01 L420 32.99 L424 33.94 L428 34.83 L432 35.65 L436 36.39 L440 37.05 L444 37.62 L448 38.11 L452 38.51 L456 38.85 L460 39.12 L464 39.34 L468 39.51 L472 39.64 L476 39.74 L480 39.81" fill="none" class="pulse-env" stroke-width="1" stroke-dasharray="3 4"/>
+      <use href="#pp" class="pulse-base" fill="none" stroke-width="1.6"/>
+      <use href="#pp" class="pulse-sweep" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="220 1380"/>
+      <text x="150" y="9" text-anchor="middle" class="pulse-label">π pulse</text>
+      <text x="380" y="9" text-anchor="middle" class="pulse-label">π/2</text>
+      <text x="540" y="9" text-anchor="middle" class="pulse-label">readout</text>
+    </svg>
+    <p class="hero-sub">I am learning quantum from the ground up and writing it down as I go. Every edition takes one core concept and the one piece of maths it needs, and shows it moving instead of telling it. No physics degree assumed. No hype either.</p>
+    <div class="hero-actions">
+      <a class="hero-cta" href="{{ site.baseurl }}{{ p.url }}">Start with Edition 1</a>
+      <a class="hero-ghost" href="{{ site.baseurl }}/maths/">See the maths you need</a>
+    </div>
+  </div>
+</section>
+
+<section class="score" id="tracker">
+  <div class="wrap score-in">
+    <p class="score-head"><b>THE TRACKER</b>UPDATED EVERY EDITION</p>
+    <div class="score-item"><div class="score-num">{{ site.posts | size }} <small>{% if site.posts.size == 1 %}edition{% else %}editions{% endif %}</small></div><div class="score-lbl">Published every {{ site.publish_day }}. One concept, one piece of maths, four to six moving pictures each</div></div>
+    <div class="score-item"><div class="score-num">{{ m_cov }} / {{ m_all }} <small>maths</small></div><div class="score-lbl">Maths topics covered, out of the eight you need for the whole subject</div></div>
+    <div class="score-item"><div class="score-num">{{ c_cov }} / {{ c_all }} <small>concepts</small></div><div class="score-lbl">Core concepts covered, plus {{ c_tou }} introduced and waiting for their own edition</div></div>
+  </div>
+</section>
+
+<section class="wrap sec" id="editions">
+  <div class="sec-head">
+    <div>
+      <h2 class="sec-title">Start here</h2>
+      <p class="sec-sub">The latest edition, and the two tracks every edition draws from.</p>
+    </div>
+    <a class="sec-all" href="{{ site.baseurl }}/archive/">All editions</a>
+  </div>
+  <div class="ed-grid">
+    <a class="ed-card" href="{{ site.baseurl }}{{ p.url }}">
+      <div class="ed-meta"><b>ED. {{ p.edition }}</b><span>{{ p.category | upcase }}</span><span>{{ p.date | date: "%-d %b %Y" | upcase }}</span></div>
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.description | truncate: 170 }}</p>
+      <span class="ed-go">Read this edition</span>
+    </a>
+    <a class="ed-card cat-maths" href="{{ site.baseurl }}/maths/">
+      <div class="ed-meta"><b>TRACK</b><span>REQUIRED MATHS</span></div>
+      <h3>The maths you need</h3>
+      <p>Eight topics cover the whole subject. Each one is introduced the edition it is first needed, never before. {{ m_cov }} done so far.</p>
+      <span class="ed-go">Open the maths track</span>
+    </a>
+    <a class="ed-card cat-track" href="{{ site.baseurl }}/concepts/">
+      <div class="ed-meta"><b>TRACK</b><span>CORE CONCEPTS</span></div>
+      <h3>The core concepts</h3>
+      <p>Twelve ideas from bit to error correction, in the order they depend on each other. {{ c_cov }} covered, {{ c_tou }} introduced.</p>
+      <span class="ed-go">Open the concepts track</span>
+    </a>
+  </div>
+</section>
+
+<section class="wrap sec">
+  <div class="thesis">
+    <div class="thesis-card">
+      <h3>How this works</h3>
+      <p>Quantum covers computing, communication and sensing. It is usually taught as physics first and maths second. This blog does it the other way round, one small piece at a time, with every idea drawn as something that moves.</p>
+      <p><span class="cond">The rule:</span> no symbol appears before the picture it describes.</p>
+    </div>
+    <div class="thesis-card">
+      <h3>What it is not</h3>
+      <p>Not a course, and not a news feed. I am a learner writing in public, which means some editions will be corrected later. When that happens the correction is printed, not quietly patched.</p>
+      <p><span class="cond">The risk:</span> I will get things wrong. Tell me, and I will fix the edition and credit you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap sec" id="maths">
+  <div class="sec-head">
+    <div>
+      <h2 class="sec-title">The maths you need</h2>
+      <p class="sec-sub">Eight topics, in the order the subject needs them. Each unlocks when an edition uses it.</p>
+    </div>
+    <a class="sec-all" href="{{ site.baseurl }}/maths/">Full track</a>
+  </div>
+  <div class="track-grid">
+    {% for t in site.data.tracks.maths %}
+    {% if t.status == "upcoming" %}<div class="track-item is-upcoming">{% else %}{% assign ed = site.posts | where: "edition", t.edition | first %}<a class="track-item is-{{ t.status }}" href="{% if ed %}{{ site.baseurl }}{{ ed.url }}{% else %}{{ site.baseurl }}/archive/{% endif %}">{% endif %}
+      <span class="st st-{{ t.status }}">{{ t.status | upcase }}{% if t.edition %} · ED. {{ t.edition }}{% endif %}</span>
+      <h3>{{ t.name }}</h3>
+      <p>{{ t.what }}</p>
+    {% if t.status == "upcoming" %}</div>{% else %}</a>{% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="wrap sec" id="concepts">
+  <div class="sec-head">
+    <div>
+      <h2 class="sec-title">The core concepts</h2>
+      <p class="sec-sub">Twelve ideas. Each one depends on the ones before it, so they are covered in this order.</p>
+    </div>
+    <a class="sec-all" href="{{ site.baseurl }}/concepts/">Full track</a>
+  </div>
+  <div class="track-grid">
+    {% for t in site.data.tracks.concepts %}
+    {% if t.status == "upcoming" %}<div class="track-item is-upcoming">{% else %}{% assign ed = site.posts | where: "edition", t.edition | first %}<a class="track-item is-{{ t.status }}" href="{% if ed %}{{ site.baseurl }}{{ ed.url }}{% else %}{{ site.baseurl }}/archive/{% endif %}">{% endif %}
+      <span class="st st-{{ t.status }}">{{ t.status | upcase }}{% if t.edition %} · ED. {{ t.edition }}{% endif %}</span>
+      <h3>{{ t.name }}</h3>
+      <p>{{ t.what }}</p>
+    {% if t.status == "upcoming" %}</div>{% else %}</a>{% endif %}
+    {% endfor %}
+  </div>
+  <div class="chips">
+    <span>BROWSE BY TOPIC:</span>
+    <a class="chip" href="{{ site.baseurl }}/archive/">Computing</a>
+    <a class="chip" href="{{ site.baseurl }}/archive/">Communication</a>
+    <a class="chip" href="{{ site.baseurl }}/archive/">Sensing</a>
+    <a class="chip" href="{{ site.baseurl }}/maths/">Maths</a>
+    <a class="chip" href="{{ site.baseurl }}/glossary/">Glossary</a>
+  </div>
+</section>

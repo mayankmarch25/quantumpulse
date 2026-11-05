@@ -1,0 +1,40 @@
+title: Quantum Pulse
+tagline: Quantum, decoded. From zero.
+author: Mayank Madhur
+publish_day: Tuesday
+linkedin_profile: https://www.linkedin.com/in/mayank-madhur/
+# Create the second LinkedIn newsletter, then paste its URL here. Until then the Subscribe buttons point to the LinkedIn profile.
+linkedin_newsletter: https://www.linkedin.com/in/mayank-madhur/
+email: mayank@mayankmadhur.in
+description: Learning quantum from zero, in public. One core concept and the one piece of maths it needs, shown moving, every Tuesday.
+
+# Separate GitHub account from Healthcare Pulse.
+# Option A (recommended): repo named <username>.github.io  -> site at the root. Keep baseurl "".
+# Option B: repo named quantum-pulse                        -> site at /quantum-pulse/. Set baseurl: "/quantum-pulse".
+# Replace YOUR-USERNAME with the new account's GitHub username.
+url: "https://YOUR-USERNAME.github.io"
+baseurl: ""
+
+# Editions are Markdown files in _posts/. Each one becomes /editions/<slug>/
+permalink: /editions/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  parse_block_html: false
+plugins:
+  - jekyll-feed
+include:
+  - _pages
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - HOW-TO-ADD-AN-EDITION.md
+  - preview
+# Every file in _posts/ gets the edition layout automatically; no need to repeat it in front matter.
+defaults:
+  - scope: { path: "", type: "posts" }
+    values: { layout: "edition" }
+  - scope: { path: "_pages" }
+    values: { layout: "default" }
+future: true

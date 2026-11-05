@@ -1,0 +1,21 @@
+<div class="fig" data-fig="coin">
+<div class="fig-head"><b>FIGURE {{ include.num }}</b><span>{{ include.title }}</span></div>
+<div class="fig-row">
+<div>
+<div class="coin" data-role="coin">?</div>
+<div class="ctrl" style="justify-content:center">
+<button class="btn primary" type="button" data-act="flip1">Flip once</button>
+<button class="btn" type="button" data-act="flip20">Flip 20 times</button>
+<button class="btn" type="button" data-act="reset">Reset</button>
+</div>
+</div>
+<div>
+<div class="bars">
+<div class="bar gold"><span>H</span><div class="track"><div class="fill" data-role="bh"></div></div><span class="val" data-role="vh">0</span></div>
+<div class="bar"><span>T</span><div class="track"><div class="fill" data-role="bt"></div></div><span class="val" data-role="vt">0</span></div>
+</div>
+<div class="tally"><div>flips<b data-role="tn">0</b></div><div>heads share<b data-role="ts">–</b></div></div>
+</div>
+</div>
+{% if include.caption %}<p class="fig-cap">{{ include.caption }}</p>{% endif %}
+</div>

@@ -1,0 +1,11 @@
+<div class="fig" data-fig="pulse">
+<div class="fig-head"><b>FIGURE {{ include.num }}</b><span>{{ include.title }}</span></div>
+<div class="fig-row r3">
+<div>
+<svg data-role="wave" viewBox="0 0 600 120" aria-hidden="true"></svg>
+<div class="ctrl"><button class="btn" type="button" data-act="toggle">Pause</button><span class="readout">arrow at <b data-role="deg">0°</b></span></div>
+</div>
+<div data-role="stage" style="max-width:220px;margin:0 auto"></div>
+</div>
+{% if include.caption %}<p class="fig-cap">{{ include.caption }}</p>{% endif %}
+</div>

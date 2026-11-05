@@ -12,8 +12,8 @@ description: Learning quantum from zero, in public. One core concept and the one
 # Option A (recommended): repo named <username>.github.io  -> site at the root. Keep baseurl "".
 # Option B: repo named quantum-pulse                        -> site at /quantum-pulse/. Set baseurl: "/quantum-pulse".
 # Replace YOUR-USERNAME with the new account's GitHub username.
-url: "https://YOUR-USERNAME.github.io"
-baseurl: ""
+url: "https://mayankmarch25.github.io"
+baseurl: "/quantumpulse"
 
 # Editions are Markdown files in _posts/. Each one becomes /editions/<slug>/
 permalink: /editions/:title/

@@ -6,7 +6,7 @@ category: Core concepts
 tags: [Computing, Qubit, Superposition, Measurement]
 maths: [Vectors, Probability]
 read_time: 12
-next_title: "Edition 2: Complex numbers, and where the phase lives"
+next_title: "Edition 2: Why quantum computing, and what the book promises"
 ---
 <div class="jump">
 <span>IN THIS EDITION</span>
@@ -104,7 +104,7 @@ The two contributions to <span class="k">b</span> are equal and opposite, so the
 <strong>The angle, for completeness.</strong> If the arrow is at angle θ from the top, then <span class="k">a = cos(θ/2)</span> and <span class="k">b = sin(θ/2)</span>. Since cos² + sin² = 1 for any angle, Rule 1 is automatic. That is why Figure 3 can use one slider for two numbers.
 </li>
 </ol>
-<p style="margin-top:16px"><span class="cond">Next edition’s maths:</span> complex numbers. Today the arrow lived on a flat circle. The real picture is a sphere, and the missing direction, around the equator, is called phase. It needs numbers that have a direction as well as a size.</p>
+<p style="margin-top:16px"><span class="cond">Where this goes next:</span> this edition was a preview. From here the blog follows <em>Dancing with Qubits</em> in the book’s own order: why quantum (chapter 1), then the maths chapters 2 to 6, then back to the qubit with everything in hand. Today the arrow lived on a flat circle; the missing direction, phase, arrives with complex numbers in chapter 3.</p>
 </section>
 
 <div class="cover">
@@ -125,7 +125,7 @@ The two contributions to <span class="k">b</span> are equal and opposite, so the
 <div>
 <h3>What this edition did not do</h3>
 <ul class="not">
-<li>It drew the arrow on a circle. The real object is a sphere, and the extra direction is phase. That needs complex numbers, which is Edition 2.</li>
+<li>It drew the arrow on a circle. The real object is a sphere, and the extra direction is phase. That needs complex numbers, which come with chapter 3 of the book.</li>
 <li>It treated the qubit as perfect. Real ones drift on their own, some within microseconds. That is decoherence, and it comes after gates.</li>
 <li>It used one qubit. Almost everything interesting needs two, and two is not twice one. That is tensor products.</li>
 </ul>

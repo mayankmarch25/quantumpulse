@@ -39,7 +39,7 @@
     </div>
     <nav class="ed-nav">
       {% if page.previous %}<a href="{{ site.baseurl }}{{ page.previous.url }}"><small>Previous</small>Edition {{ page.previous.edition }}: {{ page.previous.title }}</a>{% else %}<span><small>Previous</small>This is the first edition</span>{% endif %}
-      {% if page.next %}<a href="{{ site.baseurl }}{{ page.next.url }}"><small>Next</small>Edition {{ page.next.edition }}: {{ page.next.title }}</a>{% else %}<span><small>Next {{ site.publish_day }}</small>{{ page.next_title | default: "Edition in progress" }}</span>{% endif %}
+      {% if page.next %}<a href="{{ site.baseurl }}{{ page.next.url }}"><small>Next</small>Edition {{ page.next.edition }}: {{ page.next.title }}</a>{% else %}<span><small>Next edition</small>{{ page.next_title | default: "Edition in progress" }}</span>{% endif %}
     </nav>
     <a class="back-link" href="{{ site.baseurl }}/archive/">All editions</a>
   </footer>

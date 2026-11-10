@@ -1,80 +1,122 @@
-# One place to update progress. status: covered | touched | upcoming
-# "edition" is the edition number where it was covered or touched.
+# Progress tracker, aligned to Sutor, Dancing with Qubits (2019).
+# Maths track = Part I (chapters 2 to 6). Concepts track = Part II (chapters 7 to 11).
+# status: covered | touched | upcoming.  edition = where it was covered or touched.  ch = book sections.
 maths:
-  - name: Vectors and amplitudes
-    what: Two numbers that describe one qubit. Length is always 1.
-    why: Every qubit state is a vector. Everything else is built on this.
-    status: covered
+  - name: Bits, logic circuits and addition
+    ch: "2.1–2.5"
+    what: What is inside a computer, powers of two, true/false, gates, adding with logic.
+    why: Quantum gates are judged against these. Quantum arithmetic reuses them.
+    status: touched
     edition: 1
-  - name: Probability and squaring
-    what: Probability equals amplitude squared.
-    why: It is how an angle turns into odds, and why negative numbers are allowed.
-    status: covered
+  - name: Growth, sorting, searching and hardness
+    ch: "2.6–2.8"
+    what: Algorithms, exponential growth, what makes a problem hard.
+    why: Every quantum speed-up is a claim about this.
+    status: upcoming
+  - name: Number systems, up to complex numbers
+    ch: "3.1–3.5, 3.9"
+    what: Naturals, integers, rationals, reals, then numbers with a direction.
+    why: Phase lives in complex numbers. Without them the Bloch sphere is only a circle.
+    status: upcoming
+  - name: Modular arithmetic, continued fractions, structure
+    ch: "3.5.4, 3.6–3.8"
+    what: Clock arithmetic, fractions that unfold, groups and fields in passing.
+    why: Shor’s algorithm is built from these.
+    status: upcoming
+  - name: Trigonometry, polar coordinates, the complex plane, 3D
+    ch: "4.1–4.6"
+    what: Angles, cos and sin, rotations, the plane where complex numbers live.
+    why: A qubit is an arrow; this is the geometry of arrows.
+    status: upcoming
+  - name: Vectors, linear maps and matrices
+    ch: "5.1–5.6"
+    what: Lists of numbers, the maps that move them, and matrices as those maps.
+    why: A qubit state is a vector. Every gate is a matrix. Two qubits need a tensor product.
+    status: touched
     edition: 1
-  - name: Complex numbers
-    what: Numbers with a direction, not just a size.
-    why: Phase lives here. Without it the Bloch sphere is only a circle.
+  - name: Inner products, length and unitary maps
+    ch: "5.7"
+    what: Overlap between vectors, why length is kept at 1, maps that preserve it.
+    why: Probabilities come from overlap. Gates must be unitary.
     status: upcoming
-  - name: Matrices as gates
-    what: A small grid of numbers that rotates a vector.
-    why: Every quantum gate is a matrix. Applying a gate is a multiplication.
-    status: upcoming
-  - name: Inner products and Dirac notation
-    what: The bra-ket shorthand and what overlap means.
-    why: It is the notation every paper uses, and overlap is how you read off probabilities.
-    status: upcoming
-  - name: Tensor products
-    what: How two small vectors become one bigger one.
-    why: Two qubits are not two lists of two; they are one list of four.
-    status: upcoming
-  - name: Unitary matrices and reversibility
-    what: Rotations that keep length at 1.
-    why: Quantum computation is reversible. Unitaries are the reason.
-    status: upcoming
-  - name: Eigenvalues and measurement
-    what: The directions a matrix leaves alone.
+  - name: Change of basis, eigenvectors and eigenvalues
+    ch: "5.8–5.9"
+    what: Describing the same arrow in different directions; the directions a map leaves alone.
     why: Measuring is asking which eigen-direction the state picked.
     status: upcoming
+  - name: Probability, randomness and expectation
+    ch: "6.1–6.7"
+    what: Discrete probability, error detection, expectation, Markov and Chebyshev.
+    why: Measurement is probabilistic. Error correction is a probability argument.
+    status: touched
+    edition: 1
 
 concepts:
   - name: Bit versus qubit
+    ch: "7.1"
     what: A switch versus an arrow.
     status: covered
     edition: 1
-  - name: Superposition
-    what: The arrow tilted between 0 and 1.
-    status: covered
-    edition: 1
-  - name: Measurement
-    what: The arrow snaps, and you get one bit.
+  - name: Superposition and measurement
+    ch: "7.1, 6.1"
+    what: The arrow tilted; one look gives one bit.
     status: covered
     edition: 1
   - name: The Bloch sphere
-    what: The picture of one qubit as an arrow on a ball.
+    ch: "7.4–7.5"
+    what: One qubit as an arrow on a ball, with a second angle for phase.
     status: touched
     edition: 1
   - name: Interference
-    what: Doing a thing twice can undo randomness.
+    ch: "7.6.5, 9.6"
+    what: Amplitudes cancel. A half-turn done twice undoes randomness.
     status: touched
     edition: 1
-  - name: Phase
-    what: The direction around the equator.
+  - name: Bras, kets and the state vector
+    ch: "7.2–7.3.1"
+    what: The notation every paper uses, and what it stands for.
     status: upcoming
   - name: Single-qubit gates
-    what: Rotations, written as matrices.
+    ch: "7.6–7.7"
+    what: X, Y, Z, H, S, T and rotations, each a unitary matrix.
     status: upcoming
-  - name: Two qubits
+  - name: Observables, expectation and the density matrix
+    ch: "7.3.3–7.3.4"
+    what: Measuring in other directions; states you only partly know.
+    status: upcoming
+  - name: Two qubits and tensor products
+    ch: "8.1, 8.2.1"
     what: Four amplitudes, not two pairs.
     status: upcoming
   - name: Entanglement
+    ch: "8.2"
     what: Two arrows that cannot be described one at a time.
     status: upcoming
-  - name: Decoherence and noise
-    what: Why the arrow drifts, and how fast.
+  - name: Multi-qubit gates
+    ch: "8.3"
+    what: CNOT, SWAP, CZ, Toffoli, Fredkin.
     status: upcoming
-  - name: Error correction
-    what: Many physical qubits standing in for one reliable one.
+  - name: Circuits, universality, no cloning, teleportation
+    ch: "9.1–9.4"
+    what: Wiring gates together, what any circuit can do, and arithmetic.
     status: upcoming
-  - name: Physical qubits
-    what: Superconducting, trapped ion, neutral atom, photon. How each one is built.
+  - name: Oracles, amplitude amplification, Grover
+    ch: "9.5–9.7"
+    what: Asking a black box, boosting the right answer, searching in √N.
+    status: upcoming
+  - name: Deutsch-Jozsa and Simon
+    ch: "9.8–9.9"
+    what: The first problems where one quantum query beats many classical ones.
+    status: upcoming
+  - name: Fourier transform, phase estimation, Shor
+    ch: "10.1–10.6"
+    what: Roots of unity, reading a phase, finding a period, factoring.
+    status: upcoming
+  - name: Physical qubits and decoherence
+    ch: "11.1–11.4"
+    what: Photons, polarization, T1 and T2, pure versus mixed.
+    status: upcoming
+  - name: Error correction, Quantum Volume, simulation
+    ch: "11.5–11.8"
+    what: Catching flips, measuring a machine, writing a simulator.
     status: upcoming

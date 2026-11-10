@@ -35,7 +35,7 @@ Prose in Markdown. **Bold** for the one term being defined.
 <div class="eq">symbols here</div>
 </li>
 </ol>
-<p style="margin-top:16px"><span class="cond">Next edition’s maths:</span> what unlocks next, and why.</p>
+<p style="margin-top:16px"><span class="cond">Where this shows up in a qubit:</span> for Part I editions, the closing figure and one paragraph tying the chapter to a quantum idea.</p>
 </section>
 
 <div class="cover">

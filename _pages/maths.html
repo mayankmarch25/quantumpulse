@@ -7,7 +7,7 @@ permalink: /maths/
 <section class="wrap sec">
   <p class="eyebrow">TRACK · REQUIRED MATHS · {{ m_cov }} OF {{ site.data.tracks.maths | size }} COVERED</p>
   <h1 class="sec-title">The maths you need</h1>
-  <p class="sec-sub">Eight topics cover the whole subject at the level this blog works at. None of them needs more than school algebra to start. Each one unlocks in the edition that first needs it, so the list below doubles as a reading order.</p>
+  <p class="sec-sub">Part I of <em>Dancing with Qubits</em>, in {{ site.data.tracks.maths | size }} topics. None of them needs more than school algebra to start. The editions cover them in the book’s order, chapters 2 to 6, so the list below is the reading order. Every maths edition ends by showing where that piece turns up in a qubit.</p>
   <div class="callout">
     <p><strong>The one rule to carry everywhere:</strong> a qubit is described by numbers called amplitudes, and the probability of a result is the amplitude <em>squared</em>. Every other topic on this page exists to keep that rule working as the system gets bigger.</p>
     <p>If you remember nothing else from the maths track, remember that squaring is why amplitudes can be negative, and negative amplitudes are why quantum computers can do anything a coin cannot.</p>
@@ -18,7 +18,7 @@ permalink: /maths/
       <span class="num">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</span>
       <div>
         <span class="st st-{{ t.status }}">{{ t.status | upcase }}</span>
-        <h3>{{ t.name }}</h3>
+        <h3>{{ t.name }} <span class="ch">§ {{ t.ch }}</span></h3>
         <p>{{ t.what }}</p>
         <p class="why">Why it is needed: {{ t.why }}</p>
       </div>

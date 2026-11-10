@@ -1,0 +1,33 @@
+---
+title: The study plan
+description: Sutor’s Dancing with Qubits, chapter by chapter, and the edition that covers each one. In the book’s order, at a varying pace.
+permalink: /plan/
+---
+{% assign plan = site.data.plan %}
+{% assign total = 0 %}{% assign done = 0 %}
+{% for part in plan.parts %}{% assign total = total | plus: part.editions.size %}{% assign d = part.editions | where: "status", "published" | size %}{% assign done = done | plus: d %}{% endfor %}
+<section class="wrap sec">
+  <p class="eyebrow">THE SPINE · ONE BOOK · {{ total }} EDITIONS · {{ done }} PUBLISHED</p>
+  <h1 class="sec-title">The study plan</h1>
+  <p class="sec-sub">This blog follows one book, in its own order: <em>{{ plan.book.title }}</em> by {{ plan.book.author }} ({{ plan.book.publisher }}, {{ plan.book.year }}). Part I is the maths, Part II is the quantum computing. Each chapter becomes one or two editions. Nothing outside the book is in scope until the plan is finished.</p>
+  <div class="callout">
+    <p><strong>Pace:</strong> a new edition lands roughly every two weeks, slower for the long chapters and faster for the short ones. There are no dates on this page on purpose. The order is fixed; the calendar is not.</p>
+    <p><strong>Every maths edition ends on a qubit.</strong> Part I is where the book builds the tools. Each of those editions closes with a short figure showing where that piece of maths turns up in a quantum computer, so the thread from Edition 1 never drops.</p>
+  </div>
+  {% for part in plan.parts %}
+  <h2 class="plan-part"><span>{{ part.label }}</span>{{ part.name }}</h2>
+  <div class="plan-list">
+    {% for e in part.editions %}
+    <div class="plan-row is-{{ e.status }}">
+      <div class="plan-n"><b>ED. {{ e.n }}</b><span>{{ e.track | upcase }}</span></div>
+      <div>
+        <span class="st st-{% if e.status == "published" %}covered{% elsif e.status == "next" %}touched{% else %}upcoming{% endif %}">{{ e.status | upcase }}</span>
+        <h3>{% if e.url %}<a href="{{ site.baseurl }}{{ e.url }}">{{ e.title }}</a>{% else %}{{ e.title }}{% endif %}</h3>
+        <p><b>Book</b> {{ e.sections }}</p>
+        {% if e.qubit %}<p><b>Qubit</b> {{ e.qubit }}</p>{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</section>

@@ -1,0 +1,53 @@
+# Latest developments. Newest entries go at the top. One block per item.
+# Keep "what" to one or two plain sentences in your own words. Always include a source URL.
+# tag: Hardware | Error correction | Money | Security | India | Policy | Software
+# stop: the edition number that explains the idea behind the item (optional)
+- date: 2026-11-09
+  tag: Hardware
+  headline: Diraq puts a silicon-spin quantum computer inside a commercial data centre
+  what: Silicon spin qubits are built with the same kind of fabrication as ordinary chips. Running one inside a normal data centre, instead of a physics lab, tests whether that promise holds in the real world.
+  source: The Quantum Insider
+  url: https://thequantuminsider.com/
+  stop: 24
+- date: 2026-11-06
+  tag: Hardware
+  headline: IBM switches on Quantum System Two in Chicago, built around its Nighthawk chip
+  what: "The machine anchors a new national algorithm centre at the Illinois quantum park and will start on drug discovery and power-grid problems. The open question is the same as always: how reliable the results are, when the qubits are not perfect."
+  source: The Qubit Report, weekly round-up
+  url: https://thequbitreport.com/quantum-computing-weekly-round-up/2026/11/06/quantum-computing-weekly-round-up-week-ending-november-7-2026/
+  stop: 24
+- date: 2026-11-06
+  tag: Error correction
+  headline: IBM researchers describe a way to verify error-correcting codes up to distance 16
+  what: A code’s distance is how many errors it can catch. Checking that a large code really performs as designed is hard; this is a method for doing that check. Edition 26 explains what a code distance is.
+  source: Quantum Zeitgeist, weekly digest
+  url: https://quantumzeitgeist.com/quantum-zeitgeist-weekly-digest-nov-9/
+  stop: 26
+- date: 2026-11-05
+  tag: Money
+  headline: IonQ reports $173.8 million third-quarter revenue and a $1.2 billion backlog
+  what: Revenue up 336 percent year on year, with full-year guidance raised to $505 to $515 million. The money is coming in before the reliable machines are ready. Edition 2 is about how to read claims like this.
+  source: The Qubit Report, weekly round-up
+  url: https://thequbitreport.com/quantum-computing-weekly-round-up/2026/11/06/quantum-computing-weekly-round-up-week-ending-november-7-2026/
+  stop: 2
+- date: 2026-11-07
+  tag: Security
+  headline: Hong Kong’s HKMA and HKUST release a post-quantum cryptography toolkit for banks, aiming at 2030
+  what: The toolkit covers cryptographic inventory, risk prioritisation, supply-chain engagement and governance. Banks are being asked to migrate before any machine capable of breaking today’s encryption exists. Edition 23 explains why.
+  source: Quantum Computing Report
+  url: https://quantumcomputingreport.com/news/
+  stop: 23
+- date: 2026-11-07
+  tag: India
+  headline: QNu Labs launches quantum-safe training for companies, backed by the National Quantum Mission
+  what: An India item. The National Quantum Mission is funding workforce training on quantum-safe security, not only hardware. Related to the Hong Kong item above.
+  source: Quantum Computing Report
+  url: https://quantumcomputingreport.com/news/
+  stop: 23
+- date: 2026-08-25
+  tag: India
+  headline: Amaravati Quantum Valley says quantum computing services should start by January 2027
+  what: Andhra Pradesh’s minister put a date on the facility, which is being built with German technology, with a tech park around it. We will check if they meet this date.
+  source: The Hindu
+  url: https://www.thehindu.com/news/national/andhra-pradesh/quantum-computing-services-may-start-in-amaravati-from-january-2027-says-minister/article71387988.ece
+  stop: 28

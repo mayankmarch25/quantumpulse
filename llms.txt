@@ -10,6 +10,7 @@ Sister publication: Healthcare Pulse, https://mayankmadhur.in
 
 - [The journey](https://mayankmarch25.github.io/quantumpulse/#journey): all 28 stops on the homepage, mapped to the book’s chapters, with status.
 
+- [Latest developments](https://mayankmarch25.github.io/quantumpulse/news/): recent quantum news in plain English, each with a source and the journey stop that explains it.
 - [Glossary](https://mayankmarch25.github.io/quantumpulse/glossary/): one-sentence plain-English definitions, each tagged with the edition where it first appears.
 - [All editions](https://mayankmarch25.github.io/quantumpulse/archive/)
 

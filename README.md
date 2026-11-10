@@ -22,7 +22,8 @@ If you would rather name the repo `quantum-pulse`, that also works: the site the
     .
     ├── _config.yml                 site settings: name, links, baseurl, publish day
     ├── _data/
-    │   ├── plan.yml                the 28-stop journey (status, chapter, one-line gist); drives the homepage map
+    │   ├── plan.yml                the 28-edition plan (status, chapter, one-line gist); drives the homepage
+    │   ├── news.yml                latest developments; homepage shows four, /news/ shows all
     │   └── glossary.yml            glossary entries; drives /glossary/
     ├── _drafts/
     │   └── edition-template.md     copy this to start an edition; drafts are never published
@@ -33,7 +34,7 @@ If you would rather name the repo `quantum-pulse`, that also works: the site the
     │   ├── default.html            site pages
     │   └── edition.html            editions: meta, title, body, share bar, previous/next
     ├── _pages/
-    │   ├── about.md, archive.html, glossary.html, 404.html  (plan, maths, concepts now redirect to the homepage map)
+    │   ├── about.md, archive.html, news.html, glossary.html, 404.html  (plan, maths, concepts now redirect to the homepage map)
     ├── _posts/
     │   └── 2026-11-10-a-bit-a-coin-and-a-qubit.md    Edition 1. Each edition is one file here.
     ├── assets/

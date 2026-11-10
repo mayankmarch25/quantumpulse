@@ -17,8 +17,8 @@ outcomes:
   - "Show, with real numbers, why a qubit is not a fancy coin"
 terms: [Bit, Qubit, Superposition, Amplitude, Measurement, Interference, Pulse]
 remember:
-  - "Probability is amplitude squared. That one rule carries the whole subject."
-  - "Measuring snaps the arrow to 0 or 1 and throws the angle away. To learn the angle you need many fresh copies."
+  - "Probability is amplitude squared. This one rule runs the whole subject."
+  - "Measuring snaps the arrow to 0 or 1 and the angle is lost. To learn the angle you need many fresh copies."
   - "Amplitudes can be negative, so they can cancel. Probabilities cannot. That is the difference between a qubit and a coin."
 ---
 <div class="jump">
@@ -32,7 +32,7 @@ remember:
 <a href="#maths"><b>M</b> The maths you need</a>
 </div>
 
-Most explanations of quantum computing start with the word “both”. A qubit is both 0 and 1. That sentence is where most people stop understanding, because it is not what a qubit is. This edition builds the idea from three things you already know: a switch, a coin, and an arrow.
+Most explanations of quantum computing start with the word “both”. A qubit is both 0 and 1. That is where most people stop understanding, because that is not what a qubit is. This edition builds the idea from three things you already know: a switch, a coin, and an arrow.
 
 By the end you will be able to say, in one line each, what a bit is, what a coin is, what a qubit is, and why the third one is not a fancy version of the second. The maths is at the bottom, and it is two rules.
 
@@ -56,7 +56,7 @@ A qubit is an arrow. Pointing straight up means 0. Straight down means 1. Anywhe
 
 Drag the slider. Watch two things at once: the arrow tilts, and the two bars change. The bars are what you would get if you measured many fresh copies of this arrow and tallied the results, exactly like the coin.
 
-{% include figures/bloch.html num="3" angle="60" title="A qubit. The angle sets the odds." caption="Straight up: 100% zero. Straight down: 100% one. Halfway (90°): 50/50, which looks exactly like a fair coin. Hold that thought for Figure 5." %}
+{% include figures/bloch.html num="3" angle="60" title="A qubit. The angle sets the odds." caption="Straight up: 100% zero. Straight down: 100% one. Halfway (90°): 50/50, which looks exactly like a fair coin. Keep this in mind for Figure 5." %}
 
 Notice what the arrow is not. It is not “both 0 and 1”. It is a definite direction that happens not to be either end. The word for a tilted arrow is **superposition**, and that is all the word means.
 
@@ -64,13 +64,13 @@ Notice what the arrow is not. It is not “both 0 and 1”. It is a definite dir
 
 Measuring a qubit forces it to pick. The arrow snaps straight up or straight down, and stays there. You get one bit out. The angle is gone. To learn the angle, you need many fresh copies and a tally, exactly as you needed many flips to learn the coin.
 
-This is the first thing that trips people. A qubit holds an angle, but will only ever hand you a bit.
+This is the first thing that confuses people. A qubit holds an angle, but it will only ever give you a bit.
 
 {% include figures/bloch.html num="4" mode="measure" angle="60" title="Measurement. One look, one bit, angle gone." caption="Press Measure once. The arrow snaps to an end and the tally moves by one. Press Measure 50 fresh copies and watch the observed share settle near the expected one. Any single result tells you almost nothing." %}
 
 <h2 id="s5"><span class="n">5 OF 6</span>Why a qubit is not a coin</h2>
 
-At 90° the qubit looked exactly like a fair coin: 50/50. So why not just use coins? Here is the difference, and it is the whole subject.
+At 90° the qubit looked exactly like a fair coin: 50/50. So why not just use coins? Here is the difference. It is the most important idea in the whole subject.
 
 Shuffle a coin twice and it is still 50/50. Rotate a qubit by a quarter turn twice and it is back at 0, with certainty. The second rotation undid the first. Nothing you can do to a coin undoes randomness, because a coin only has probabilities. A qubit has amplitudes, and amplitudes can cancel.
 
@@ -82,7 +82,7 @@ In a real machine nobody drags a slider. The arrow is tilted with a pulse: a sho
 
 That waveform is the one on the masthead of this site. Here it is doing its job.
 
-{% include figures/pulse.html num="6" title="A π pulse drives the arrow from 0 to 1." caption="The grey curve is the pulse envelope; the oscillation inside it is the carrier, at the qubit’s own frequency. The arrow turns only while the pulse has energy, which is why its shape and length are the whole art of control." %}
+{% include figures/pulse.html num="6" title="A π pulse drives the arrow from 0 to 1." caption="The grey curve is the pulse envelope; the oscillation inside it is the carrier, at the qubit’s own frequency. The arrow turns only while the pulse has energy. So the shape and length of the pulse decide how well the qubit is controlled." %}
 
 <section class="maths" id="maths">
 <h2>The maths you need, this edition</h2>
@@ -111,7 +111,7 @@ Start at 0, apply it twice, and track the two numbers:
 <tr><td>after 1st turn</td><td>0.71</td><td>0.71</td><td>50%</td></tr>
 <tr><td>after 2nd turn</td><td>0.71·0.71 + 0.71·0.71 = <b>1</b></td><td>0.71·0.71 <span class="neg">− 0.71·0.71</span> = <b>0</b></td><td>0%</td></tr>
 </table>
-The two contributions to <span class="k">b</span> are equal and opposite, so they cancel. A coin has no minus sign to cancel with, so its 50% can never go back to 0%. That cancellation is interference, and every quantum speed-up ever proposed is a more elaborate version of it.
+The two contributions to <span class="k">b</span> are equal and opposite, so they cancel. A coin has no minus sign to cancel with, so its 50% can never go back to 0%. That cancelling is called interference. Every quantum speed-up ever proposed is a bigger version of this same trick.
 </li>
 <li>
 <strong>The angle, for completeness.</strong> If the arrow is at angle θ from the top, then <span class="k">a = cos(θ/2)</span> and <span class="k">b = sin(θ/2)</span>. Since cos² + sin² = 1 for any angle, Rule 1 is automatic. That is why Figure 3 can use one slider for two numbers.
@@ -151,4 +151,4 @@ The two contributions to <span class="k">b</span> are equal and opposite, so the
 - Matuschak and Nielsen, *Quantum Country*, “Quantum computing for the very curious”. Free, online, and the clearest treatment of amplitudes versus probabilities I have found.
 - IBM Quantum Learning, “Basics of quantum information”. Free course that starts from the same two rules.
 
-<p class="small-note">Nothing above is quoted from these sources. Figures and numbers are my own. If you find an error, write to me and the correction will be printed here with a date.</p>
+<p class="small-note">Nothing above is copied from these sources. The pictures and numbers are my own. If you find a mistake, write to me and I will add the correction here with a date.</p>

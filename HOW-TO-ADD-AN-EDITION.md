@@ -29,7 +29,11 @@ Rename to `_posts/YYYY-MM-DD-your-slug.md`. The date is the day you publish it; 
 
 Find the edition’s row (inside its part), set `status: published`, add `url: /editions/your-slug/`, and set the following row to `status: next`. The plan page reads from this.
 
-## 4. Add terms: `_data/glossary.yml`
+## 4. Add developments: `_data/news.yml`
+
+Two to five items per edition cycle, newest at the top. Each needs a date, a tag, a headline in your words, one or two sentences on what it means, the source name and URL, and optionally the edition number that explains it. The homepage shows the latest four; `/news/` shows all.
+
+## 5. Add terms: `_data/glossary.yml`
 
 One entry per new term, tagged `ED. N`. Change any `NOT YET COVERED` tag the edition resolves.
 

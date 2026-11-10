@@ -11,7 +11,7 @@ layout: default
   <canvas id="ifield" class="ifield" aria-hidden="true"></canvas>
   <div class="wrap hero-v3-in">
     <div class="hero-left">
-      <p class="eyebrow">ONE BOOK · {{ total }} STOPS · LEARNING IN PUBLIC</p>
+      <p class="eyebrow">ONE BOOK · {{ total }} EDITIONS · I LEARN, YOU LEARN</p>
       <h1 class="hero-title">Quantum, <span class="hi-grad">decoded</span>.<br>From zero.</h1>
       <svg class="hero-pulse" viewBox="0 0 600 70" preserveAspectRatio="none" aria-hidden="true">
       <defs>
@@ -26,10 +26,10 @@ layout: default
       <text x="380" y="9" text-anchor="middle" class="pulse-label">π/2</text>
       <text x="540" y="9" text-anchor="middle" class="pulse-label">readout</text>
     </svg>
-      <p class="hero-sub">I am reading one book, <em>Dancing with Qubits</em>, and turning each chapter into pictures you can drag, flip and measure. No physics degree, no hype, no fixed schedule. Come along.</p>
+      <p class="hero-sub">I am reading one book, <em>Dancing with Qubits</em>, chapter by chapter. For every chapter I make simple pictures you can move and play with. You do not need a physics degree. A new edition comes every two weeks or so. Learn along with me.</p>
       <div class="hero-actions">
-        <a class="hero-cta" href="{{ site.baseurl }}{{ first.url }}">Start at stop 1</a>
-        <a class="hero-ghost" href="#journey">See the whole journey</a>
+        <a class="hero-cta" href="{{ site.baseurl }}{{ first.url }}">Start with Edition 1</a>
+        <a class="hero-ghost" href="#journey">See the full plan</a>
       </div>
     </div>
     <div class="hero-right">
@@ -40,7 +40,7 @@ layout: default
           <div class="slider"><label>ANGLE θ, FROM THE TOP <output id="hThetaOut">54°</output></label><input type="range" id="hTheta" min="0" max="180" value="54" step="1" aria-label="Polar angle"></div>
           <div class="slider"><label>PHASE φ, AROUND THE EQUATOR <output id="hPhiOut">15°</output></label><input type="range" id="hPhi" min="0" max="360" value="15" step="1" aria-label="Phase angle"></div>
           <div class="lab-p"><span>P(0) <b id="hP0">79%</b></span><span>P(1) <b id="hP1">21%</b></span><button type="button" class="btn primary" id="hMeasure">Measure a fresh shot</button><span class="lab-res" id="hRes" aria-live="polite"></span></div>
-          <p class="lab-cap">Turn the angle and the odds change. Turn the phase and the arrow moves but the odds do not. Stop 1 explains the first; stop 12 explains the second.</p>
+          <p class="lab-cap">Move the angle slider: the chances change. Move the phase slider: the arrow moves but the chances do not. Edition 1 explains the first. Edition 12 explains the second.</p>
         </div>
       </div>
     </div>
@@ -49,14 +49,19 @@ layout: default
 
 <section class="wrap here" id="here" aria-label="Where the journey is">
   <div class="here-card">
-    <div class="here-big"><span class="here-lbl">YOU ARE HERE</span><span class="here-num">Stop {{ done }}<small>/ {{ total }}</small></span></div>
+    <div class="here-big"><span class="here-lbl">YOU ARE HERE</span><span class="here-num">Edition {{ done }}<small>/ {{ total }}</small></span></div>
     <div class="here-col">
-      <span class="here-lbl">LATEST STOP</span>
+      <span class="here-lbl">LATEST EDITION</span>
       <a class="here-link" href="{{ site.baseurl }}{{ latest.url }}">Edition {{ latest.edition }} · {{ latest.title }}</a>
       <p>{{ latest.description | truncate: 120 }}</p>
     </div>
-    <div class="here-col">
-      <span class="here-lbl">NEXT STOP</span>
+    <div class="here-col" id="hereContinue" hidden>
+      <span class="here-lbl">CONTINUE WHERE YOU LEFT OFF</span>
+      <a class="here-link" id="contLink" href="#"></a>
+      <p id="contPct"></p>
+    </div>
+    <div class="here-col" id="hereNext">
+      <span class="here-lbl">NEXT EDITION</span>
       {% if nxt %}<span class="here-link muted">Edition {{ nxt.n }} · {{ nxt.title }}</span><p>{{ nxt.gist }}</p>{% else %}<span class="here-link muted">In progress</span>{% endif %}
     </div>
   </div>
@@ -65,22 +70,22 @@ layout: default
 <section class="wrap sec" id="try">
   <div class="sec-head">
     <div>
-      <p class="sec-num">01 / TRY ONE</p>
-      <h2 class="sec-title">What an edition feels like</h2>
-      <p class="sec-sub">Every idea is a thing you can move. This one is lifted from stop 1. Drag the slider: the arrow is a qubit, the bars are what you would see if you measured it many times.</p>
+      <p class="sec-num">01 / TRY IT</p>
+      <h2 class="sec-title">Try one picture first</h2>
+      <p class="sec-sub">Every edition has pictures you can move. This one is from Edition 1. Drag the slider. The arrow is a qubit. The bars show what you get if you measure it many times.</p>
     </div>
   </div>
-  {% include figures/bloch.html num="TRY IT" angle="60" title="A qubit is an arrow. The angle sets the odds." caption="Straight up is always 0. Straight down is always 1. Everything between is a mix, and the maths behind the bars is two lines long. Stop 1 explains all of it." %}
+  {% include figures/bloch.html num="TRY IT" angle="60" title="A qubit is an arrow. The angle decides the chances." caption="Straight up means always 0. Straight down means always 1. Anything in between is a mix. The maths behind the bars is only two lines. Edition 1 explains all of it." %}
 </section>
 
 <section class="wrap sec" id="journey">
   <div class="sec-head">
     <div>
-      <p class="sec-num">02 / THE ROUTE</p>
-      <h2 class="sec-title">The journey</h2>
-      <p class="sec-sub">The whole book as one line, {{ total }} stops, in the book’s own order. Filled stops are published. The glowing one is being written. Hollow ones are ahead. Roughly one new stop every two weeks.</p>
+      <p class="sec-num">02 / THE PLAN</p>
+      <h2 class="sec-title">The full plan, one book, {{ total }} editions</h2>
+      <p class="sec-sub">The whole book in one line, in the same order as the book. Filled circle: published. Glowing circle: I am writing it now. Empty circle: coming later. One new edition every two weeks or so.</p>
     </div>
-    <div class="legend"><span class="lg lg-framing">Framing</span><span class="lg lg-maths">Part I · the maths</span><span class="lg lg-concepts">Part II · the quantum</span></div>
+    <div class="legend"><span class="lg lg-framing">Intro and close</span><span class="lg lg-maths">Part I · maths</span><span class="lg lg-concepts">Part II · quantum</span></div>
   </div>
   {% for part in plan.parts %}
   <h3 class="part-head"><span>{{ part.label }}</span>{{ part.name }}</h3>
@@ -89,7 +94,7 @@ layout: default
     <li class="stop is-{{ e.status }} t-{{ e.track }}">
       <span class="dot" aria-hidden="true">{{ e.n }}</span>
       <div class="stop-body">
-        <span class="ch">{{ e.ch }}{% if e.status == "next" %} · WRITING NOW{% elsif e.status == "planned" %} · AHEAD{% endif %}</span>
+        <span class="ch">{{ e.ch }}{% if e.status == "next" %} · WRITING NOW{% elsif e.status == "planned" %} · COMING{% endif %}</span>
         <h4>{% if e.url %}<a href="{{ site.baseurl }}{{ e.url }}">{{ e.title }}</a>{% else %}{{ e.title }}{% endif %}</h4>
         <p>{{ e.gist }}</p>
         {% if e.url %}<a class="stop-go" href="{{ site.baseurl }}{{ e.url }}">Read it</a>{% endif %}
@@ -100,24 +105,56 @@ layout: default
   {% endfor %}
 </section>
 
+<section class="wrap sec" id="news">
+  <div class="sec-head">
+    <div>
+      <p class="sec-num">03 / LATEST DEVELOPMENTS</p>
+      <h2 class="sec-title">Latest developments</h2>
+      <p class="sec-sub">News from the quantum world, newest first. Each item in simple words, with the source link and the edition that explains the idea behind it.</p>
+    </div>
+    <a class="sec-all" href="{{ site.baseurl }}/news/">All developments</a>
+  </div>
+  {% assign items = site.data.news | sort: "date" | reverse %}
+  <div class="track-wrap">
+    <div class="track" aria-label="Recent developments, newest first">
+      {% for n in items limit: 4 %}
+      <a class="track-item" href="{{ n.url }}" target="_blank" rel="noopener">
+        <span class="track-date">{{ n.date | date: "%-d %b" }}</span>
+        <span class="track-node tag-{{ n.tag | slugify }}" aria-hidden="true"></span>
+        <span class="track-card">
+          <span class="tag tag-{{ n.tag | slugify }}">{{ n.tag | upcase }}</span>
+          <strong>{{ n.headline }}</strong>
+          <em>{{ n.what | truncate: 110 }}</em>
+          <small>{{ n.source }}{% if n.stop %} · Edition {{ n.stop }}{% endif %}</small>
+        </span>
+      </a>
+      {% endfor %}
+      <div class="track-more"><a href="{{ site.baseurl }}/news/">Older news →</a></div>
+    </div>
+  </div>
+</section>
+
 <section class="wrap sec" id="how">
-  <div class="sec-head"><div><p class="sec-num">03 / THE FORMAT</p><h2 class="sec-title">How every stop is built</h2><p class="sec-sub">Same shape each time, so you always know where you are inside an edition.</p></div></div>
+  <div class="sec-head"><div><p class="sec-num">04 / THE FORMAT</p><h2 class="sec-title">How every edition is built</h2><p class="sec-sub">Same format every time, so you always know where you are.</p></div></div>
   <div class="how-grid">
-    <div class="how"><span class="how-n">1</span><h3>In one breath</h3><p>Three lines at the top that say the whole idea. If you read nothing else, read those.</p></div>
-    <div class="how"><span class="how-n">2</span><h3>Pictures first</h3><p>Four to six figures you can drag, flip or run. No symbol appears before the picture it describes.</p></div>
-    <div class="how"><span class="how-n">3</span><h3>Then the maths</h3><p>The one or two rules the chapter needs, in a box at the bottom, each tied to a figure above.</p></div>
-    <div class="how"><span class="how-n">4</span><h3>Three things to remember</h3><p>The edition ends with three sentences. Those are the test.</p></div>
+    <div class="how"><span class="how-n">1</span><h3>In short</h3><p>Three lines at the top that give the whole idea. If you are short of time, read only these.</p></div>
+    <div class="how"><span class="how-n">2</span><h3>Pictures first</h3><p>Four to six pictures you can move. The picture always comes before the formula.</p></div>
+    <div class="how"><span class="how-n">3</span><h3>Then the maths</h3><p>The one or two rules the chapter needs, in a box at the end. Each rule points back to a picture.</p></div>
+    <div class="how"><span class="how-n">4</span><h3>Three things to remember</h3><p>Every edition ends with three sentences. If you remember these, you have got it.</p></div>
   </div>
 </section>
 
 <section class="wrap sec who" id="who">
   <img class="who-photo" src="{{ site.baseurl }}/assets/img/profile.jpg" alt="{{ site.author }}">
   <div>
-    <p class="sec-num">04 / THE AUTHOR</p>
+    <p class="sec-num">05 / THE AUTHOR</p>
     <h2 class="sec-title">{{ site.author }}</h2>
-    <p class="who-text">Healthcare analyst by day, maths student by night, quantum beginner in public. I am Practice Leader for Healthcare &amp; Life Sciences at HFS Research and write <a href="https://mayankmadhur.in" target="_blank" rel="noopener">Healthcare Pulse</a>, a weekly newsletter on India’s health data. I am doing an MSc in Applied Mathematics on the side, which is how a book on qubits ended up on my desk.</p>
-    <a class="hero-ghost" href="{{ site.baseurl }}/about/">The full story, degrees and all</a>
+    <p class="who-text">I am a healthcare analyst. I am also studying maths. In quantum, I am a beginner, and I am learning in the open. I am Practice Leader for Healthcare &amp; Life Sciences at HFS Research. I write <a href="https://mayankmadhur.in" target="_blank" rel="noopener">Healthcare Pulse</a>, a weekly newsletter on India’s healthcare numbers. I am also doing an MSc in Applied Mathematics. That is how this book reached my desk.</p>
+    <a class="hero-ghost" href="{{ site.baseurl }}/about/">More about me</a>
   </div>
 </section>
 <script src="{{ site.baseurl }}/assets/js/figures.js" defer></script>
 <script src="{{ site.baseurl }}/assets/js/hero.js" defer></script>
+<script>
+(function(){ try{ var r=JSON.parse(localStorage.getItem('qp-last')||'null'); if(!r||!r.url) return; var box=document.getElementById('hereContinue'); var a=document.getElementById('contLink'); a.href=r.url; a.textContent='Edition '+r.n+' · '+r.title; document.getElementById('contPct').textContent=(r.pct>=95?'You finished this one. The next edition is ready.':'You were '+r.pct+'% through.'); box.hidden=false; document.getElementById('hereNext').hidden=true; }catch(e){} })();
+</script>

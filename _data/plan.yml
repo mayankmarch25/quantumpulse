@@ -1,7 +1,7 @@
 # The study plan, in the book's own order. Sutor, "Dancing with Qubits" (Packt, 2019).
 # No dates on purpose: a new edition lands roughly every two weeks, and the pace varies with the chapter.
 # status: published | next | planned.   track: maths (Part I) | concepts (Part II) | framing
-# ch = chapter label shown on the journey map.  gist = one plain line a beginner can understand.  qubit = where Part I maths shows up in a qubit.
+# ch = chapter label shown on the plan.  gist = one plain line a beginner can understand.  qubit = where Part I maths shows up in a qubit.
 book:
   title: Dancing with Qubits
   author: Robert S. Sutor
@@ -23,7 +23,7 @@ parts:
     title: Why quantum computing, and what the book promises
     sections: 'Chapter 1: the mysterious quantum bit, why quantum is different, the claimed uses in AI, finance and cryptography'
     track: framing
-    qubit: Sets the questions the last edition will come back to answer.
+    qubit: Sets the questions that the last edition will answer.
     status: next
     ch: Ch 1
     gist: Why anyone bothers, and what the book promises to deliver.
@@ -37,7 +37,7 @@ parts:
     qubit: Quantum gates are judged against these gates; Grover’s search is judged against 2.8.2.
     status: planned
     ch: Ch 2
-    gist: How ordinary computers think, so the quantum ones have something to beat.
+    gist: How normal computers work, so we know what quantum ones have to beat.
   - n: 4
     title: 'Numbers: integers, remainders and continued fractions'
     sections: '3.1–3.8: naturals to reals, structure (groups, rings, fields in passing), modular arithmetic, doubling down'
@@ -45,12 +45,12 @@ parts:
     qubit: Shor’s algorithm is built from remainders and continued fractions.
     status: planned
     ch: Ch 3 · 3.1–3.8
-    gist: Whole numbers, remainders and clock arithmetic. Shor will need them.
+    gist: Whole numbers, remainders and clock arithmetic. Shor’s algorithm will need them.
   - n: 5
     title: Complex numbers
     sections: '3.9: arithmetic, conjugation, units, polynomials and roots'
     track: maths
-    qubit: Phase lives here. The missing direction on Edition 1’s flat circle.
+    qubit: Phase lives here. This is the direction that was missing in Edition 1’s flat circle.
     status: planned
     ch: Ch 3 · 3.9
     gist: Numbers with a direction. This is where phase lives.
@@ -95,7 +95,7 @@ parts:
     track: concepts
     status: planned
     ch: Ch 7 · 7.1–7.3.1
-    gist: The qubit again, this time with the real notation.
+    gist: The qubit again, this time with the proper notation.
   - n: 11
     title: Observables, expectation and the density matrix
     sections: '7.3.2–7.3.4: unitary matrices to standard form, the density matrix, observables and expectation'
@@ -172,7 +172,7 @@ parts:
     track: concepts
     status: planned
     ch: Ch 10 · 10.1
-    gist: The transform behind everything in Part II’s second half.
+    gist: The maths tool behind everything in the second half of Part II.
   - n: 22
     title: Factoring, classically, and how hard it really is
     sections: '10.2–10.3: the factoring problem, big integers, classical methods, how hard can that be'
@@ -186,7 +186,7 @@ parts:
     track: concepts
     status: planned
     ch: Ch 10 · 10.4–10.6
-    gist: The algorithm that started the field.
+    gist: The algorithm that started this whole field.
   - n: 24
     title: 'What it takes to be a qubit: photons, the double slit, polarization'
     sections: '11.1–11.3: that’s not logical, what does it take to be a qubit, light and photons'
@@ -207,7 +207,7 @@ parts:
     track: concepts
     status: planned
     ch: Ch 11 · 11.5–11.6
-    gist: Catching errors you are not allowed to look at.
+    gist: Catching errors without being allowed to look at the qubit.
   - n: 27
     title: The software stack, a simulator in forty lines, and the cat
     sections: '11.7–11.9: software stack and access, simulation, the cat'
@@ -221,4 +221,4 @@ parts:
     track: framing
     status: planned
     ch: Ch 12
-    gist: What is next, and the answers to the questions from stop 2.
+    gist: What comes next, and the answers to the questions from Edition 2.

@@ -32,16 +32,16 @@
   <div class="wrap">
     <div class="where t-{{ stop.track | default: 'framing' }}">
       <span class="where-dot">{{ page.edition }}</span>
-      <div class="where-text"><b>STOP {{ page.edition }} OF {{ total }}</b>{% if stop %}{{ stop_part.name }} · {{ stop.ch }}{% endif %}</div>
-      <a class="where-map" href="{{ site.baseurl }}/#journey">See the map</a>
+      <div class="where-text"><b>EDITION {{ page.edition }} OF {{ total }}</b>{% if stop %}{{ stop_part.name }} · {{ stop.ch }}{% endif %}</div>
+      <a class="where-map" href="{{ site.baseurl }}/#journey">See the full plan</a>
     </div>
     {% if page.summary or page.outcomes %}
     <div class="brief">
-      {% if page.summary %}<div class="brief-col"><span class="brief-lbl">IN ONE BREATH</span><ol class="breath">{% for s in page.summary %}<li>{{ s }}</li>{% endfor %}</ol></div>{% endif %}
-      {% if page.outcomes %}<div class="brief-col"><span class="brief-lbl">BY THE END YOU CAN</span><ul class="outcomes">{% for o in page.outcomes %}<li>{{ o }}</li>{% endfor %}</ul></div>{% endif %}
+      {% if page.summary %}<div class="brief-col"><span class="brief-lbl">IN SHORT</span><ol class="breath">{% for s in page.summary %}<li>{{ s }}</li>{% endfor %}</ol></div>{% endif %}
+      {% if page.outcomes %}<div class="brief-col"><span class="brief-lbl">AFTER THIS YOU CAN</span><ul class="outcomes">{% for o in page.outcomes %}<li>{{ o }}</li>{% endfor %}</ul></div>{% endif %}
     </div>
     {% endif %}
-    {% if page.terms %}<p class="terms"><span>WORDS YOU WILL MEET</span>{% for t in page.terms %}<a href="{{ site.baseurl }}/glossary/">{{ t }}</a>{% endfor %}</p>{% endif %}
+    {% if page.terms %}<p class="terms"><span>NEW WORDS IN THIS EDITION</span>{% for t in page.terms %}<a href="{{ site.baseurl }}/glossary/">{{ t }}</a>{% endfor %}</p>{% endif %}
   </div>
   <div class="wrap ed-layout">
     <aside class="rail" aria-label="Sections">
@@ -49,7 +49,7 @@
         <span class="brief-lbl">IN THIS EDITION</span>
         <nav class="toc" id="toc"></nav>
         <div class="rail-prog"><span>YOUR PROGRESS</span><b id="railPct">0%</b><i><em id="railBar"></em></i></div>
-        <a class="where-map" href="{{ site.baseurl }}/#journey">Back to the map</a>
+        <a class="where-map" href="{{ site.baseurl }}/#journey">Back to the plan</a>
       </div>
     </aside>
     <div class="ed-body">{{ content }}

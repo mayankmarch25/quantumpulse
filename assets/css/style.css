@@ -412,3 +412,78 @@ body { background-image: radial-gradient(var(--grid) 1px, transparent 1px); back
 .hero-cap { display: none; }
 .sec-num { font-family: var(--mono); font-size: 11.5px; letter-spacing: 2.5px; color: var(--cobalt); font-weight: 600; margin-bottom: 8px; }
 @media (max-width: 980px) { .lab { max-width: 100%; } .lab-p .btn { margin-left: 0; } }
+
+
+/* v5: latest developments */
+.news-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.news-card, .news-row { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px 18px 16px; }
+.news-card:hover, .news-row:hover { border-color: var(--cobalt); }
+.news-meta { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px; font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; color: var(--muted); }
+.tag { color: var(--cobalt); font-weight: 600; }
+.tag-money, .tag-india { color: var(--gold); } .tag-security { color: var(--cyan); }
+.news-card h3 { font-size: 16.5px; line-height: 1.3; color: var(--ink); letter-spacing: -.01em; margin-bottom: 8px; }
+.news-card p { font-size: 14px; color: var(--body-c); }
+.news-foot { margin-top: 10px !important; font-size: 13px !important; }
+.news-foot a { text-decoration: none; font-weight: 600; }
+.news-list { display: grid; gap: 14px; max-width: 900px; }
+.news-row { display: grid; grid-template-columns: 150px 1fr; gap: 18px; align-items: start; }
+.news-row .news-meta { flex-direction: column; align-items: flex-start; gap: 6px; margin: 0; }
+.news-row h3 { font-size: 19px; color: var(--ink); letter-spacing: -.01em; line-height: 1.25; margin-bottom: 8px; }
+.news-row p { font-size: 15.5px; }
+@media (max-width: 980px) { .news-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 720px) { .news-grid { grid-template-columns: 1fr; } .news-row { grid-template-columns: 1fr; } .news-row .news-meta { flex-direction: row; align-items: center; } }
+
+
+/* v6: developments as a timeline */
+/* homepage horizontal track */
+.track-wrap { overflow-x: auto; overflow-y: hidden; scrollbar-width: thin; padding-bottom: 6px; }
+.track { position: relative; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(220px, 1fr); gap: 14px; padding-top: 58px; min-width: 100%; }
+.track::before { content: ""; position: absolute; left: 0; right: 0; top: 40px; height: 2px; background: linear-gradient(90deg, var(--gold), var(--cobalt) 40%, var(--line)); border-radius: 2px; }
+.track-item:first-of-type .track-node { outline: 2px solid var(--gold); outline-offset: 3px; }
+.track-item { position: relative; text-decoration: none; color: inherit; display: block; }
+.track-date { position: absolute; top: -48px; left: 0; font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; color: var(--muted); }
+.track-node { position: absolute; top: -24px; left: 0; width: 14px; height: 14px; border-radius: 50%; background: var(--cobalt); border: 3px solid var(--bg); box-shadow: 0 0 14px rgba(107,134,255,.5); }
+.track-node.tag-money, .track-node.tag-india { background: var(--gold); box-shadow: 0 0 14px rgba(224,176,76,.5); }
+.track-node.tag-security { background: var(--cyan); box-shadow: 0 0 14px rgba(34,198,227,.5); }
+.track-card { display: grid; gap: 6px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 16px 14px; height: 100%; align-content: start; }
+.track-item:hover .track-card { border-color: var(--cobalt); }
+.track-card .tag { font-family: var(--mono); font-size: 10.5px; letter-spacing: 1.5px; }
+.track-card strong { font-size: 15.5px; line-height: 1.3; color: var(--ink); letter-spacing: -.01em; font-weight: 700; }
+.track-card em { font-style: normal; font-size: 13.5px; color: var(--body-c); line-height: 1.5; }
+.track-card small { font-family: var(--mono); font-size: 11px; letter-spacing: 1px; color: var(--muted); margin-top: 4px; }
+.track-more { display: grid; place-items: center; min-width: 120px; }
+.track-more a { font-weight: 700; text-decoration: none; border: 1px dashed var(--line); border-radius: 14px; padding: 18px 20px; color: var(--cobalt); }
+
+/* news page vertical timeline */
+.tl-filters { display: flex; gap: 8px; flex-wrap: wrap; margin: 22px 0 28px; }
+.tl-filters .chip { cursor: pointer; font: inherit; font-size: 14px; }
+.tl-filters .chip.on { background: var(--grad); color: #fff; border-color: transparent; }
+.timeline { position: relative; max-width: 900px; }
+.timeline::before { content: ""; position: absolute; left: 86px; top: 0; bottom: 0; width: 2px; background: var(--line); }
+.tl-month { position: relative; margin: 10px 0 14px 60px; padding-left: 40px; }
+.tl-month span { display: inline-block; font-family: var(--mono); font-size: 11px; letter-spacing: 2.5px; color: var(--ink); background: var(--tint); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; }
+.tl-month::before { content: ""; position: absolute; left: 20px; top: 50%; width: 14px; height: 14px; margin-top: -7px; border-radius: 50%; background: var(--bg); border: 2px solid var(--muted); }
+.tl-item { position: relative; display: grid; grid-template-columns: 70px 40px 1fr; gap: 0 14px; align-items: start; margin-bottom: 18px; }
+.tl-date { text-align: right; padding-top: 12px; font-family: var(--mono); color: var(--muted); }
+.tl-date b { display: block; font-size: 22px; color: var(--ink); font-weight: 600; line-height: 1; }
+.tl-date span { font-size: 11px; letter-spacing: 1.5px; }
+.tl-node { position: relative; display: block; width: 16px; height: 16px; margin: 20px 0 0 8px; border-radius: 50%; background: var(--cobalt); border: 3px solid var(--bg); box-shadow: 0 0 16px rgba(107,134,255,.55); }
+.tl-node.tag-money, .tl-node.tag-india { background: var(--gold); box-shadow: 0 0 16px rgba(224,176,76,.55); }
+.tl-node.tag-security { background: var(--cyan); box-shadow: 0 0 16px rgba(34,198,227,.55); }
+.tl-node.tag-error-correction { background: #B48CFF; box-shadow: 0 0 16px rgba(180,140,255,.55); }
+.tag-error-correction { color: #B48CFF; }
+.tl-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 20px 14px; }
+.tl-card:hover { border-color: var(--cobalt); }
+.tl-card h3 { font-size: 18.5px; color: var(--ink); letter-spacing: -.01em; line-height: 1.25; margin: 2px 0 8px; }
+.tl-card p { font-size: 15px; color: var(--body-c); }
+.tl-end { margin: 6px 0 0 60px; padding-left: 40px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 2px; color: var(--muted); position: relative; }
+.tl-end::before { content: ""; position: absolute; left: 20px; top: 2px; width: 14px; height: 14px; border-radius: 50%; border: 2px dashed var(--muted); }
+@media (max-width: 720px) {
+  .timeline::before { left: 16px; }
+  .tl-item { grid-template-columns: 24px 1fr; }
+  .tl-date { display: none; }
+  .tl-node { margin-left: 8px; }
+  .tl-month { margin-left: 0; padding-left: 40px; } .tl-month::before { left: 9px; }
+  .tl-end { margin-left: 0; } .tl-end::before { left: 9px; }
+  .tl-card .news-meta { flex-wrap: wrap; }
+}

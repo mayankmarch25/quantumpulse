@@ -1,0 +1,44 @@
+---
+title: Latest developments
+description: Quantum computing developments on a timeline, each in plain English, with its source and the edition that explains the idea behind it.
+permalink: /news/
+---
+{% assign items = site.data.news | sort: "date" | reverse %}
+{% assign tags = site.data.news | map: "tag" | uniq %}
+<section class="wrap sec">
+  <p class="eyebrow">NEWS · {{ items | size }} ITEMS · NEWEST FIRST</p>
+  <h1 class="sec-title">Latest developments</h1>
+  <p class="sec-sub">News from the quantum world, on a timeline. Each item is one or two sentences in my words, a source link you can open, and the edition that explains the idea behind it. I update this when an edition goes out, not every day.</p>
+  <div class="tl-filters" role="toolbar" aria-label="Filter by topic">
+    <button type="button" class="chip on" data-tag="all">All</button>
+    {% for t in tags %}<button type="button" class="chip" data-tag="{{ t | slugify }}">{{ t }}</button>{% endfor %}
+  </div>
+  <div class="timeline" id="timeline">
+    {% assign prev = "" %}
+    {% for n in items %}
+      {% assign m = n.date | date: "%B %Y" %}
+      {% if m != prev %}<div class="tl-month"><span>{{ m | upcase }}</span></div>{% assign prev = m %}{% endif %}
+      <article class="tl-item" data-tag="{{ n.tag | slugify }}">
+        <div class="tl-date"><b>{{ n.date | date: "%-d" }}</b><span>{{ n.date | date: "%b" }}</span></div>
+        <span class="tl-node tag-{{ n.tag | slugify }}" aria-hidden="true"></span>
+        <div class="tl-card">
+          <div class="news-meta"><span class="tag tag-{{ n.tag | slugify }}">{{ n.tag | upcase }}</span><span>{{ n.source }}</span></div>
+          <h3>{{ n.headline }}</h3>
+          <p>{{ n.what }}</p>
+          <p class="news-foot"><a href="{{ n.url }}" target="_blank" rel="noopener">Open the source</a>{% if n.stop %} · <a href="{{ site.baseurl }}/#journey">Explained in Edition {{ n.stop }}</a>{% endif %}</p>
+        </div>
+      </article>
+    {% endfor %}
+    <div class="tl-end"><span>OLDER ITEMS WILL BE ADDED HERE</span></div>
+  </div>
+</section>
+<script>
+(function(){
+  var tl=document.getElementById('timeline'); if(!tl) return;
+  document.querySelectorAll('.tl-filters .chip').forEach(function(b){ b.addEventListener('click',function(){
+    var tag=b.dataset.tag; document.querySelectorAll('.tl-filters .chip').forEach(function(x){x.classList.toggle('on',x===b);});
+    tl.querySelectorAll('.tl-item').forEach(function(it){ it.hidden=!(tag==='all'||it.dataset.tag===tag); });
+    tl.querySelectorAll('.tl-month').forEach(function(mh){ var el=mh.nextElementSibling, any=false; while(el&&!el.classList.contains('tl-month')&&!el.classList.contains('tl-end')){ if(!el.hidden) any=true; el=el.nextElementSibling; } mh.hidden=!any; });
+  }); });
+})();
+</script>

@@ -19,13 +19,17 @@ Front matter to fill in:
 
 ## 2. Publish it: move it to `_posts/` with a date
 
-Rename to `_posts/YYYY-MM-DD-your-slug.md`. The date is the Tuesday it goes out; the slug becomes the URL: `/editions/your-slug/`. Previous and next links, the homepage card, the archive, the tracker count and the sitemap all update on their own.
+Rename to `_posts/YYYY-MM-DD-your-slug.md`. The date is the day you publish it; the slug becomes the URL: `/editions/your-slug/`. Previous and next links, the homepage card, the archive, the tracker count and the sitemap all update on their own.
 
 ## 3. Update the tracks: `_data/tracks.yml`
 
 For each maths topic or concept the edition covers, change `status: upcoming` to `covered` (own edition) or `touched` (appeared in a figure, no edition yet) and add `edition: N`.
 
-## 4. Add terms: `_data/glossary.yml`
+## 4. Mark the plan: `_data/plan.yml`
+
+Find the edition’s row (inside its part), set `status: published`, add `url: /editions/your-slug/`, and set the following row to `status: next`. The plan page reads from this.
+
+## 5. Add terms: `_data/glossary.yml`
 
 One entry per new term, tagged `ED. N`. Change any `NOT YET COVERED` tag the edition resolves.
 

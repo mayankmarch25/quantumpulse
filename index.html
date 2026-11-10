@@ -7,6 +7,7 @@ layout: default
 {% assign c_tou = site.data.tracks.concepts | where: "status", "touched" | size %}
 {% assign c_all = site.data.tracks.concepts | size %}
 {% assign p = site.posts.first %}
+{% assign plan = site.data.plan %}
 <section class="wrap hero">
   <div class="hero-left">
     <p class="eyebrow">COMPUTING · COMMUNICATION · SENSING · LEARNED FROM ZERO, IN PUBLIC</p>
@@ -24,10 +25,10 @@ layout: default
       <text x="380" y="9" text-anchor="middle" class="pulse-label">π/2</text>
       <text x="540" y="9" text-anchor="middle" class="pulse-label">readout</text>
     </svg>
-    <p class="hero-sub">I am learning quantum from the ground up and writing it down as I go. Every edition takes one core concept and the one piece of maths it needs, and shows it moving instead of telling it. No physics degree assumed. No hype either.</p>
+    <p class="hero-sub">I am learning quantum from the ground up and writing it down as I go. One book is the spine: <em>Dancing with Qubits</em> by Robert S. Sutor, read in its own order, a chapter at a time. Each edition draws its ideas as things that move. New editions roughly every two weeks; the pace follows the chapter, not a calendar. No physics degree assumed.</p>
     <div class="hero-actions">
       <a class="hero-cta" href="{{ site.baseurl }}{{ p.url }}">Start with Edition 1</a>
-      <a class="hero-ghost" href="{{ site.baseurl }}/maths/">See the maths you need</a>
+      <a class="hero-ghost" href="{{ site.baseurl }}/plan/">See the chapter-by-chapter plan</a>
     </div>
   </div>
 </section>
@@ -35,9 +36,9 @@ layout: default
 <section class="score" id="tracker">
   <div class="wrap score-in">
     <p class="score-head"><b>THE TRACKER</b>UPDATED EVERY EDITION</p>
-    <div class="score-item"><div class="score-num">{{ site.posts | size }} <small>{% if site.posts.size == 1 %}edition{% else %}editions{% endif %}</small></div><div class="score-lbl">Published every {{ site.publish_day }}. One concept, one piece of maths, four to six moving pictures each</div></div>
-    <div class="score-item"><div class="score-num">{{ m_cov }} / {{ m_all }} <small>maths</small></div><div class="score-lbl">Maths topics covered, out of the eight you need for the whole subject</div></div>
-    <div class="score-item"><div class="score-num">{{ c_cov }} / {{ c_all }} <small>concepts</small></div><div class="score-lbl">Core concepts covered, plus {{ c_tou }} introduced and waiting for their own edition</div></div>
+    <div class="score-item"><div class="score-num">{{ site.posts | size }} <small>{% if site.posts.size == 1 %}edition{% else %}editions{% endif %}</small></div><div class="score-lbl">Of 28 planned, following the book chapter by chapter, roughly one every two weeks</div></div>
+    <div class="score-item"><div class="score-num">{{ m_cov }} / {{ m_all }} <small>maths</small></div><div class="score-lbl">Part I of the book: the maths topics with their own edition, plus {{ site.data.tracks.maths | where: "status", "touched" | size }} introduced</div></div>
+    <div class="score-item"><div class="score-num">{{ c_cov }} / {{ c_all }} <small>concepts</small></div><div class="score-lbl">Part II of the book: core concepts covered, plus {{ c_tou }} introduced and waiting for their own edition</div></div>
   </div>
 </section>
 
@@ -59,13 +60,13 @@ layout: default
     <a class="ed-card cat-maths" href="{{ site.baseurl }}/maths/">
       <div class="ed-meta"><b>TRACK</b><span>REQUIRED MATHS</span></div>
       <h3>The maths you need</h3>
-      <p>Eight topics cover the whole subject. Each one is introduced the edition it is first needed, never before. {{ m_cov }} done so far.</p>
+      <p>Part I of the book, chapters 2 to 6, in {{ m_all }} topics and in the book’s order. Every maths edition ends on the qubit idea it serves. {{ m_cov }} done so far.</p>
       <span class="ed-go">Open the maths track</span>
     </a>
     <a class="ed-card cat-track" href="{{ site.baseurl }}/concepts/">
       <div class="ed-meta"><b>TRACK</b><span>CORE CONCEPTS</span></div>
       <h3>The core concepts</h3>
-      <p>Twelve ideas from bit to error correction, in the order they depend on each other. {{ c_cov }} covered, {{ c_tou }} introduced.</p>
+      <p>Part II of the book, in {{ c_all }} ideas from one qubit to error correction, in the book’s order. {{ c_cov }} covered, {{ c_tou }} introduced.</p>
       <span class="ed-go">Open the concepts track</span>
     </a>
   </div>
@@ -75,12 +76,12 @@ layout: default
   <div class="thesis">
     <div class="thesis-card">
       <h3>How this works</h3>
-      <p>Quantum covers computing, communication and sensing. It is usually taught as physics first and maths second. This blog does it the other way round, one small piece at a time, with every idea drawn as something that moves.</p>
-      <p><span class="cond">The rule:</span> no symbol appears before the picture it describes.</p>
+      <p>One book, read in public and in order: <em>Dancing with Qubits</em>. Its first half is the maths, its second half the quantum computing. The editions follow that order, one or two per chapter, and every maths edition ends by showing where that piece turns up in a qubit.</p>
+      <p><span class="cond">The rule:</span> no symbol appears before the picture it describes, and no chapter is skipped.</p>
     </div>
     <div class="thesis-card">
       <h3>What it is not</h3>
-      <p>Not a course, and not a news feed. I am a learner writing in public, which means some editions will be corrected later. When that happens the correction is printed, not quietly patched.</p>
+      <p>Not a course, not a news feed, and not on a schedule. I am a learner writing in public: editions land when a chapter is understood well enough to draw, roughly every two weeks. Some will be corrected later. When that happens the correction is printed, not quietly patched.</p>
       <p><span class="cond">The risk:</span> I will get things wrong. Tell me, and I will fix the edition and credit you.</p>
     </div>
   </div>
@@ -90,7 +91,7 @@ layout: default
   <div class="sec-head">
     <div>
       <h2 class="sec-title">The maths you need</h2>
-      <p class="sec-sub">Eight topics, in the order the subject needs them. Each unlocks when an edition uses it.</p>
+      <p class="sec-sub">Part I of the book in {{ m_all }} topics, in the book’s order. Each unlocks when its edition lands.</p>
     </div>
     <a class="sec-all" href="{{ site.baseurl }}/maths/">Full track</a>
   </div>
@@ -100,6 +101,7 @@ layout: default
       <span class="st st-{{ t.status }}">{{ t.status | upcase }}{% if t.edition %} · ED. {{ t.edition }}{% endif %}</span>
       <h3>{{ t.name }}</h3>
       <p>{{ t.what }}</p>
+      <span class="ch">§ {{ t.ch }}</span>
     {% if t.status == "upcoming" %}</div>{% else %}</a>{% endif %}
     {% endfor %}
   </div>
@@ -109,7 +111,7 @@ layout: default
   <div class="sec-head">
     <div>
       <h2 class="sec-title">The core concepts</h2>
-      <p class="sec-sub">Twelve ideas. Each one depends on the ones before it, so they are covered in this order.</p>
+      <p class="sec-sub">Part II of the book in {{ c_all }} ideas, in the book’s order. Each depends on the ones before it.</p>
     </div>
     <a class="sec-all" href="{{ site.baseurl }}/concepts/">Full track</a>
   </div>
@@ -119,6 +121,7 @@ layout: default
       <span class="st st-{{ t.status }}">{{ t.status | upcase }}{% if t.edition %} · ED. {{ t.edition }}{% endif %}</span>
       <h3>{{ t.name }}</h3>
       <p>{{ t.what }}</p>
+      <span class="ch">§ {{ t.ch }}</span>
     {% if t.status == "upcoming" %}</div>{% else %}</a>{% endif %}
     {% endfor %}
   </div>

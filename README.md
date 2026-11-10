@@ -1,6 +1,6 @@
 # Quantum Pulse
 
-Learning quantum from zero, in public. One core concept and the one piece of maths it needs, shown moving, every Tuesday.
+Learning quantum from zero, in public. One core concept and the one piece of maths it needs, shown moving. New editions as the chapters get done, roughly every two weeks.
 
 Plain GitHub Pages on its own account, separate from Healthcare Pulse. No domain, no DNS, no build step on your machine. An edition is one Markdown file.
 
@@ -16,7 +16,6 @@ If you would rather name the repo `quantum-pulse`, that also works: the site the
 ## Before the first post goes out
 
 - Create the second LinkedIn newsletter and paste its URL into `linkedin_newsletter` in `_config.yml`. Until then the Subscribe buttons point to your LinkedIn profile.
-- Check `publish_day` in `_config.yml`.
 
 ## Folder structure
 
@@ -47,7 +46,7 @@ If you would rather name the repo `quantum-pulse`, that also works: the site the
     ├── llms.txt, robots.txt, sitemap.xml
     ├── Gemfile, .gitignore
     ├── README.md                   this file
-    └── HOW-TO-ADD-AN-EDITION.md    the weekly routine
+    └── HOW-TO-ADD-AN-EDITION.md    the per-edition routine
 
 Editions publish at `/editions/<slug>/`. Pages publish at the permalink in their front matter.
 

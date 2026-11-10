@@ -1,12 +1,12 @@
 title: Quantum Pulse
 tagline: Quantum, decoded. From zero.
 author: Mayank Madhur
-publish_day: Tuesday
+cadence: a new edition roughly every two weeks, pace varies with the chapter
 linkedin_profile: https://www.linkedin.com/in/mayank-madhur/
 # Create the second LinkedIn newsletter, then paste its URL here. Until then the Subscribe buttons point to the LinkedIn profile.
 linkedin_newsletter: https://www.linkedin.com/in/mayank-madhur/
 email: mayank@mayankmadhur.in
-description: Learning quantum from zero, in public. One core concept and the one piece of maths it needs, shown moving, every Tuesday.
+description: Learning quantum from zero, in public. One core concept and the one piece of maths it needs, shown moving. New editions as the chapters get done.
 
 # Separate GitHub account from Healthcare Pulse.
 # Option A (recommended): repo named <username>.github.io  -> site at the root. Keep baseurl "".

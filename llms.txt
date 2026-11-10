@@ -1,18 +1,20 @@
 # Quantum Pulse
 
-> A public learning notebook on quantum computing, communication and sensing, written by Mayank Madhur. Each edition takes one core concept and the single piece of maths it needs, and explains it with interactive figures rather than prose. Published every Tuesday. Not written by an expert; written by a learner, with corrections printed in place.
+> A public learning notebook on quantum computing, communication and sensing, written by Mayank Madhur. Each edition takes one core concept and the single piece of maths it needs, and explains it with interactive figures rather than prose. New editions roughly every two weeks, pace varying with the chapter. The blog follows one book as its spine, in the book’s own order: Dancing with Qubits by Robert S. Sutor (Packt, 2019); the 28-edition plan is at /plan/. Not written by an expert; written by a learner, with corrections printed in place.
 
-Site: https://YOUR-USERNAME.github.io
+Site: https://mayankmarch25.github.io/quantumpulse
 Author: Mayank Madhur, Chennai, India. Contact: mayank@mayankmadhur.in
 Sister publication: Healthcare Pulse, https://mayankmadhur.in
 
 ## Structure
 
-- [The maths you need](https://YOUR-USERNAME.github.io/maths/): eight topics, each unlocked by the edition that first uses it.
-- [The core concepts](https://YOUR-USERNAME.github.io/concepts/): twelve ideas in dependency order, from bit to error correction.
-- [Glossary](https://YOUR-USERNAME.github.io/glossary/): one-sentence plain-English definitions, each tagged with the edition where it first appears.
-- [All editions](https://YOUR-USERNAME.github.io/archive/)
+- [The study plan](https://mayankmarch25.github.io/quantumpulse/plan/): 28 editions mapped to the book’s chapters and sections, in order.
+
+- [The maths you need](https://mayankmarch25.github.io/quantumpulse/maths/): eight topics, each unlocked by the edition that first uses it.
+- [The core concepts](https://mayankmarch25.github.io/quantumpulse/concepts/): twelve ideas in dependency order, from bit to error correction.
+- [Glossary](https://mayankmarch25.github.io/quantumpulse/glossary/): one-sentence plain-English definitions, each tagged with the edition where it first appears.
+- [All editions](https://mayankmarch25.github.io/quantumpulse/archive/)
 
 ## Editions
 
-- [Edition 1: A bit, a coin and a qubit](https://YOUR-USERNAME.github.io/editions/a-bit-a-coin-and-a-qubit/): A bit is a switch, a coin is a probability, a qubit is an arrow. Six interactive figures (bit switch, coin tally, qubit angle slider, measurement with tally, coin-versus-qubit interference, π pulse) and the two rules of the maths: a² + b² = 1, and probability equals amplitude squared.
+- [Edition 1: A bit, a coin and a qubit](https://mayankmarch25.github.io/quantumpulse/editions/a-bit-a-coin-and-a-qubit/): A bit is a switch, a coin is a probability, a qubit is an arrow. Six interactive figures (bit switch, coin tally, qubit angle slider, measurement with tally, coin-versus-qubit interference, π pulse) and the two rules of the maths: a² + b² = 1, and probability equals amplitude squared.

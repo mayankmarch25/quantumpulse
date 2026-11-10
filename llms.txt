@@ -8,10 +8,8 @@ Sister publication: Healthcare Pulse, https://mayankmadhur.in
 
 ## Structure
 
-- [The study plan](https://mayankmarch25.github.io/quantumpulse/plan/): 28 editions mapped to the book’s chapters and sections, in order.
+- [The journey](https://mayankmarch25.github.io/quantumpulse/#journey): all 28 stops on the homepage, mapped to the book’s chapters, with status.
 
-- [The maths you need](https://mayankmarch25.github.io/quantumpulse/maths/): eight topics, each unlocked by the edition that first uses it.
-- [The core concepts](https://mayankmarch25.github.io/quantumpulse/concepts/): twelve ideas in dependency order, from bit to error correction.
 - [Glossary](https://mayankmarch25.github.io/quantumpulse/glossary/): one-sentence plain-English definitions, each tagged with the edition where it first appears.
 - [All editions](https://mayankmarch25.github.io/quantumpulse/archive/)
 

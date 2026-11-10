@@ -22,7 +22,7 @@ If you would rather name the repo `quantum-pulse`, that also works: the site the
     .
     ├── _config.yml                 site settings: name, links, baseurl, publish day
     ├── _data/
-    │   ├── tracks.yml              the 8 maths topics and 12 concepts with status; drives the tracker and both track pages
+    │   ├── plan.yml                the 28-stop journey (status, chapter, one-line gist); drives the homepage map
     │   └── glossary.yml            glossary entries; drives /glossary/
     ├── _drafts/
     │   └── edition-template.md     copy this to start an edition; drafts are never published
@@ -33,13 +33,16 @@ If you would rather name the repo `quantum-pulse`, that also works: the site the
     │   ├── default.html            site pages
     │   └── edition.html            editions: meta, title, body, share bar, previous/next
     ├── _pages/
-    │   ├── about.md, archive.html, maths.html, concepts.html, glossary.html, 404.html
+    │   ├── about.md, archive.html, glossary.html, 404.html  (plan, maths, concepts now redirect to the homepage map)
     ├── _posts/
     │   └── 2026-11-10-a-bit-a-coin-and-a-qubit.md    Edition 1. Each edition is one file here.
     ├── assets/
+    │   ├── img/profile.jpg         photo used on the homepage and About
     │   ├── css/style.css           design system and site pages
     │   ├── css/edition.css         edition typography and figure styles
     │   ├── js/site.js              theme toggle, menu, progress bar
+    │   ├── js/hero.js              homepage: interference field and the qubit lab
+    │   ├── js/edition.js           editions: section rail and reading progress
     │   └── js/figures.js           the engine behind every figure; editions need no script of their own
     ├── index.html                  homepage
     ├── logo.png, logo.svg
@@ -52,7 +55,7 @@ Editions publish at `/editions/<slug>/`. Pages publish at the permalink in their
 
 ## Weekly routine
 
-See `HOW-TO-ADD-AN-EDITION.md`. Short version: write Markdown in `_drafts/`, move it to `_posts/` with a date, update two YAML files. Everything else rebuilds itself.
+See `HOW-TO-ADD-AN-EDITION.md`. Short version: write Markdown in `_drafts/`, move it to `_posts/` with a date, flip its row in `_data/plan.yml`, add glossary terms. Everything else rebuilds itself.
 
 ## Local preview (optional)
 

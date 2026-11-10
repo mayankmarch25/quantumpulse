@@ -1,18 +1,19 @@
 ---
 layout: default
 ---
-{% assign m_cov = site.data.tracks.maths | where: "status", "covered" | size %}
-{% assign m_all = site.data.tracks.maths | size %}
-{% assign c_cov = site.data.tracks.concepts | where: "status", "covered" | size %}
-{% assign c_tou = site.data.tracks.concepts | where: "status", "touched" | size %}
-{% assign c_all = site.data.tracks.concepts | size %}
-{% assign p = site.posts.first %}
 {% assign plan = site.data.plan %}
-<section class="wrap hero">
-  <div class="hero-left">
-    <p class="eyebrow">COMPUTING · COMMUNICATION · SENSING · LEARNED FROM ZERO, IN PUBLIC</p>
-    <h1 class="hero-title">Quantum, <span class="hi-grad">decoded</span>.</h1>
-    <svg class="hero-pulse" viewBox="0 0 600 70" preserveAspectRatio="none" aria-hidden="true">
+{% assign total = 0 %}{% assign done = 0 %}
+{% for part in plan.parts %}{% assign total = total | plus: part.editions.size %}{% for e in part.editions %}{% if e.status == "published" %}{% assign done = done | plus: 1 %}{% endif %}{% if e.status == "next" %}{% assign nxt = e %}{% endif %}{% endfor %}{% endfor %}
+{% assign latest = site.posts.first %}
+{% assign first = site.posts.last %}
+
+<section class="hero-v3">
+  <canvas id="ifield" class="ifield" aria-hidden="true"></canvas>
+  <div class="wrap hero-v3-in">
+    <div class="hero-left">
+      <p class="eyebrow">ONE BOOK · {{ total }} STOPS · LEARNING IN PUBLIC</p>
+      <h1 class="hero-title">Quantum, <span class="hi-grad">decoded</span>.<br>From zero.</h1>
+      <svg class="hero-pulse" viewBox="0 0 600 70" preserveAspectRatio="none" aria-hidden="true">
       <defs>
         <pattern id="pg" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0 L0 0 0 20" fill="none" class="pulse-grid" stroke-width=".6"/></pattern>
         <path id="pp" d="M0 40.0 L2 40.0 L4 40.0 L6 40.0 L8 40.0 L10 40.01 L12 40.01 L14 40.0 L16 39.99 L18 39.99 L20 39.99 L22 40.01 L24 40.03 L26 40.03 L28 40.0 L30 39.96 L32 39.93 L34 39.96 L36 40.04 L38 40.12 L40 40.12 L42 40.0 L44 39.83 L46 39.75 L48 39.87 L50 40.16 L52 40.43 L54 40.41 L56 40.0 L58 39.44 L60 39.18 L62 39.57 L64 40.5 L66 41.29 L68 41.19 L70 40.0 L72 38.42 L74 37.76 L76 38.86 L78 41.29 L80 43.28 L82 42.96 L84 40.0 L86 36.28 L88 34.82 L90 37.44 L92 42.84 L94 47.03 L96 46.2 L98 40.0 L100 32.58 L102 29.92 L104 35.14 L106 45.26 L108 52.73 L110 50.96 L112 40.0 L114 27.5 L116 23.44 L118 32.2 L120 48.23 L122 59.45 L124 56.34 L126 40.0 L128 22.24 L130 17.04 L132 29.44 L134 50.88 L136 65.08 L138 60.57 L140 40.0 L142 18.71 L144 13.12 L146 27.94 L148 52.13 L150 67.3 L152 61.85 L154 40.0 L156 18.45 L158 13.45 L160 28.37 L162 51.42 L164 65.08 L166 59.6 L168 40.0 L170 21.59 L172 17.86 L174 30.53 L176 49.07 L178 59.45 L180 54.83 L182 40.0 L184 26.72 L186 24.42 L188 33.49 L190 46.08 L192 52.73 L194 49.48 L196 40.0 L198 31.92 L200 30.74 L202 36.23 L204 43.44 L206 47.03 L208 45.11 L210 40.0 L212 35.85 L214 35.36 L216 38.15 L218 41.64 L220 43.28 L222 42.33 L224 40.0 L226 38.2 L228 38.03 L230 39.24 L232 40.66 L234 41.29 L236 40.89 L238 40.0 L240 39.34 L242 39.29 L244 39.73 L246 40.23 L248 40.44 L250 40.3 L252 40.0 L254 39.79 L256 39.77 L258 39.91 L260 40.08 L262 40.15 L264 40.11 L266 40.0 L268 39.9 L270 39.87 L272 39.94 L274 40.06 L276 40.16 L278 40.14 L280 40.0 L282 39.82 L284 39.73 L286 39.86 L288 40.16 L290 40.42 L292 40.39 L294 40.0 L296 39.48 L298 39.25 L300 39.62 L302 40.44 L304 41.12 L306 41.03 L308 40.0 L310 38.69 L312 38.15 L314 39.08 L316 41.03 L318 42.59 L320 42.31 L322 40.0 L324 37.18 L326 36.13 L328 38.11 L330 42.06 L332 45.04 L334 44.38 L336 40.0 L338 34.9 L340 33.17 L342 36.75 L344 43.47 L346 48.28 L348 47.03 L350 40.0 L352 32.2 L354 29.81 L356 35.27 L358 44.93 L360 51.48 L362 49.51 L364 40.0 L366 29.94 L368 27.18 L370 34.18 L372 45.91 L374 53.44 L376 50.87 L378 40.0 L380 29.05 L382 26.37 L384 33.97 L386 45.98 L388 53.28 L390 50.48 L392 40.0 L394 29.94 L396 27.78 L398 34.72 L400 45.11 L402 51.07 L404 48.53 L406 40.0 L408 32.2 L410 30.75 L412 36.1 L414 43.68 L416 47.79 L418 45.86 L420 40.0 L422 34.9 L424 34.09 L426 37.57 L428 42.24 L430 44.63 L432 43.4 L434 40.0 L436 37.18 L438 36.81 L440 38.72 L442 41.15 L444 42.32 L446 41.66 L448 40.0 L450 38.69 L452 38.55 L454 39.43 L456 40.5 L458 40.98 L460 40.69 L462 40.0 L464 39.48 L466 39.44 L468 39.79 L470 40.18 L472 40.35 L474 40.24 L476 40.0 L478 39.83 L480 39.82 L482 37.4 L484 42.6 L486 40.0 L488 37.4 L490 42.6 L492 40.0 L494 37.4 L496 42.6 L498 40.0 L500 37.4 L502 42.6 L504 40.0 L506 37.4 L508 42.6 L510 40.0 L512 37.4 L514 42.6 L516 40.0 L518 37.4 L520 42.6 L522 40.0 L524 37.4 L526 42.6 L528 40.0 L530 37.4 L532 42.6 L534 40.0 L536 37.4 L538 42.6 L540 40.0 L542 37.4 L544 42.6 L546 40.0 L548 37.4 L550 42.6 L552 40.0 L554 37.4 L556 42.6 L558 40.0 L560 37.4 L562 42.6 L564 40.0 L566 37.4 L568 42.6 L570 40.0 L572 37.4 L574 42.6 L576 40.0 L578 37.4 L580 42.6 L582 40.0 L584 37.4 L586 42.6 L588 40.0 L590 37.4 L592 42.6 L594 40.0 L596 37.4 L598 42.6 L600 40.0"/>
@@ -25,112 +26,98 @@ layout: default
       <text x="380" y="9" text-anchor="middle" class="pulse-label">π/2</text>
       <text x="540" y="9" text-anchor="middle" class="pulse-label">readout</text>
     </svg>
-    <p class="hero-sub">I am learning quantum from the ground up and writing it down as I go. One book is the spine: <em>Dancing with Qubits</em> by Robert S. Sutor, read in its own order, a chapter at a time. Each edition draws its ideas as things that move. New editions roughly every two weeks; the pace follows the chapter, not a calendar. No physics degree assumed.</p>
-    <div class="hero-actions">
-      <a class="hero-cta" href="{{ site.baseurl }}{{ p.url }}">Start with Edition 1</a>
-      <a class="hero-ghost" href="{{ site.baseurl }}/plan/">See the chapter-by-chapter plan</a>
+      <p class="hero-sub">I am reading one book, <em>Dancing with Qubits</em>, and turning each chapter into pictures you can drag, flip and measure. No physics degree, no hype, no fixed schedule. Come along.</p>
+      <div class="hero-actions">
+        <a class="hero-cta" href="{{ site.baseurl }}{{ first.url }}">Start at stop 1</a>
+        <a class="hero-ghost" href="#journey">See the whole journey</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="lab">
+        <div class="lab-head"><b>LAB 001 / ONE QUBIT</b><span class="live">LIVE</span></div>
+        <canvas id="bloch3d" class="bloch3d" width="440" height="440" role="img" aria-label="A qubit sphere you can control with the sliders below"></canvas>
+        <div class="lab-ctl">
+          <div class="slider"><label>ANGLE θ, FROM THE TOP <output id="hThetaOut">54°</output></label><input type="range" id="hTheta" min="0" max="180" value="54" step="1" aria-label="Polar angle"></div>
+          <div class="slider"><label>PHASE φ, AROUND THE EQUATOR <output id="hPhiOut">15°</output></label><input type="range" id="hPhi" min="0" max="360" value="15" step="1" aria-label="Phase angle"></div>
+          <div class="lab-p"><span>P(0) <b id="hP0">79%</b></span><span>P(1) <b id="hP1">21%</b></span><button type="button" class="btn primary" id="hMeasure">Measure a fresh shot</button><span class="lab-res" id="hRes" aria-live="polite"></span></div>
+          <p class="lab-cap">Turn the angle and the odds change. Turn the phase and the arrow moves but the odds do not. Stop 1 explains the first; stop 12 explains the second.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="score" id="tracker">
-  <div class="wrap score-in">
-    <p class="score-head"><b>THE TRACKER</b>UPDATED EVERY EDITION</p>
-    <div class="score-item"><div class="score-num">{{ site.posts | size }} <small>{% if site.posts.size == 1 %}edition{% else %}editions{% endif %}</small></div><div class="score-lbl">Of 28 planned, following the book chapter by chapter, roughly one every two weeks</div></div>
-    <div class="score-item"><div class="score-num">{{ m_cov }} / {{ m_all }} <small>maths</small></div><div class="score-lbl">Part I of the book: the maths topics with their own edition, plus {{ site.data.tracks.maths | where: "status", "touched" | size }} introduced</div></div>
-    <div class="score-item"><div class="score-num">{{ c_cov }} / {{ c_all }} <small>concepts</small></div><div class="score-lbl">Part II of the book: core concepts covered, plus {{ c_tou }} introduced and waiting for their own edition</div></div>
+<section class="wrap here" id="here" aria-label="Where the journey is">
+  <div class="here-card">
+    <div class="here-big"><span class="here-lbl">YOU ARE HERE</span><span class="here-num">Stop {{ done }}<small>/ {{ total }}</small></span></div>
+    <div class="here-col">
+      <span class="here-lbl">LATEST STOP</span>
+      <a class="here-link" href="{{ site.baseurl }}{{ latest.url }}">Edition {{ latest.edition }} · {{ latest.title }}</a>
+      <p>{{ latest.description | truncate: 120 }}</p>
+    </div>
+    <div class="here-col">
+      <span class="here-lbl">NEXT STOP</span>
+      {% if nxt %}<span class="here-link muted">Edition {{ nxt.n }} · {{ nxt.title }}</span><p>{{ nxt.gist }}</p>{% else %}<span class="here-link muted">In progress</span>{% endif %}
+    </div>
   </div>
 </section>
 
-<section class="wrap sec" id="editions">
+<section class="wrap sec" id="try">
   <div class="sec-head">
     <div>
-      <h2 class="sec-title">Start here</h2>
-      <p class="sec-sub">The latest edition, and the two tracks every edition draws from.</p>
+      <p class="sec-num">01 / TRY ONE</p>
+      <h2 class="sec-title">What an edition feels like</h2>
+      <p class="sec-sub">Every idea is a thing you can move. This one is lifted from stop 1. Drag the slider: the arrow is a qubit, the bars are what you would see if you measured it many times.</p>
     </div>
-    <a class="sec-all" href="{{ site.baseurl }}/archive/">All editions</a>
   </div>
-  <div class="ed-grid">
-    <a class="ed-card" href="{{ site.baseurl }}{{ p.url }}">
-      <div class="ed-meta"><b>ED. {{ p.edition }}</b><span>{{ p.category | upcase }}</span><span>{{ p.date | date: "%-d %b %Y" | upcase }}</span></div>
-      <h3>{{ p.title }}</h3>
-      <p>{{ p.description | truncate: 170 }}</p>
-      <span class="ed-go">Read this edition</span>
-    </a>
-    <a class="ed-card cat-maths" href="{{ site.baseurl }}/maths/">
-      <div class="ed-meta"><b>TRACK</b><span>REQUIRED MATHS</span></div>
-      <h3>The maths you need</h3>
-      <p>Part I of the book, chapters 2 to 6, in {{ m_all }} topics and in the book’s order. Every maths edition ends on the qubit idea it serves. {{ m_cov }} done so far.</p>
-      <span class="ed-go">Open the maths track</span>
-    </a>
-    <a class="ed-card cat-track" href="{{ site.baseurl }}/concepts/">
-      <div class="ed-meta"><b>TRACK</b><span>CORE CONCEPTS</span></div>
-      <h3>The core concepts</h3>
-      <p>Part II of the book, in {{ c_all }} ideas from one qubit to error correction, in the book’s order. {{ c_cov }} covered, {{ c_tou }} introduced.</p>
-      <span class="ed-go">Open the concepts track</span>
-    </a>
-  </div>
+  {% include figures/bloch.html num="TRY IT" angle="60" title="A qubit is an arrow. The angle sets the odds." caption="Straight up is always 0. Straight down is always 1. Everything between is a mix, and the maths behind the bars is two lines long. Stop 1 explains all of it." %}
 </section>
 
-<section class="wrap sec">
-  <div class="thesis">
-    <div class="thesis-card">
-      <h3>How this works</h3>
-      <p>One book, read in public and in order: <em>Dancing with Qubits</em>. Its first half is the maths, its second half the quantum computing. The editions follow that order, one or two per chapter, and every maths edition ends by showing where that piece turns up in a qubit.</p>
-      <p><span class="cond">The rule:</span> no symbol appears before the picture it describes, and no chapter is skipped.</p>
-    </div>
-    <div class="thesis-card">
-      <h3>What it is not</h3>
-      <p>Not a course, not a news feed, and not on a schedule. I am a learner writing in public: editions land when a chapter is understood well enough to draw, roughly every two weeks. Some will be corrected later. When that happens the correction is printed, not quietly patched.</p>
-      <p><span class="cond">The risk:</span> I will get things wrong. Tell me, and I will fix the edition and credit you.</p>
-    </div>
-  </div>
-</section>
-
-<section class="wrap sec" id="maths">
+<section class="wrap sec" id="journey">
   <div class="sec-head">
     <div>
-      <h2 class="sec-title">The maths you need</h2>
-      <p class="sec-sub">Part I of the book in {{ m_all }} topics, in the book’s order. Each unlocks when its edition lands.</p>
+      <p class="sec-num">02 / THE ROUTE</p>
+      <h2 class="sec-title">The journey</h2>
+      <p class="sec-sub">The whole book as one line, {{ total }} stops, in the book’s own order. Filled stops are published. The glowing one is being written. Hollow ones are ahead. Roughly one new stop every two weeks.</p>
     </div>
-    <a class="sec-all" href="{{ site.baseurl }}/maths/">Full track</a>
+    <div class="legend"><span class="lg lg-framing">Framing</span><span class="lg lg-maths">Part I · the maths</span><span class="lg lg-concepts">Part II · the quantum</span></div>
   </div>
-  <div class="track-grid">
-    {% for t in site.data.tracks.maths %}
-    {% if t.status == "upcoming" %}<div class="track-item is-upcoming">{% else %}{% assign ed = site.posts | where: "edition", t.edition | first %}<a class="track-item is-{{ t.status }}" href="{% if ed %}{{ site.baseurl }}{{ ed.url }}{% else %}{{ site.baseurl }}/archive/{% endif %}">{% endif %}
-      <span class="st st-{{ t.status }}">{{ t.status | upcase }}{% if t.edition %} · ED. {{ t.edition }}{% endif %}</span>
-      <h3>{{ t.name }}</h3>
-      <p>{{ t.what }}</p>
-      <span class="ch">§ {{ t.ch }}</span>
-    {% if t.status == "upcoming" %}</div>{% else %}</a>{% endif %}
+  {% for part in plan.parts %}
+  <h3 class="part-head"><span>{{ part.label }}</span>{{ part.name }}</h3>
+  <ol class="stops">
+    {% for e in part.editions %}
+    <li class="stop is-{{ e.status }} t-{{ e.track }}">
+      <span class="dot" aria-hidden="true">{{ e.n }}</span>
+      <div class="stop-body">
+        <span class="ch">{{ e.ch }}{% if e.status == "next" %} · WRITING NOW{% elsif e.status == "planned" %} · AHEAD{% endif %}</span>
+        <h4>{% if e.url %}<a href="{{ site.baseurl }}{{ e.url }}">{{ e.title }}</a>{% else %}{{ e.title }}{% endif %}</h4>
+        <p>{{ e.gist }}</p>
+        {% if e.url %}<a class="stop-go" href="{{ site.baseurl }}{{ e.url }}">Read it</a>{% endif %}
+      </div>
+    </li>
     {% endfor %}
+  </ol>
+  {% endfor %}
+</section>
+
+<section class="wrap sec" id="how">
+  <div class="sec-head"><div><p class="sec-num">03 / THE FORMAT</p><h2 class="sec-title">How every stop is built</h2><p class="sec-sub">Same shape each time, so you always know where you are inside an edition.</p></div></div>
+  <div class="how-grid">
+    <div class="how"><span class="how-n">1</span><h3>In one breath</h3><p>Three lines at the top that say the whole idea. If you read nothing else, read those.</p></div>
+    <div class="how"><span class="how-n">2</span><h3>Pictures first</h3><p>Four to six figures you can drag, flip or run. No symbol appears before the picture it describes.</p></div>
+    <div class="how"><span class="how-n">3</span><h3>Then the maths</h3><p>The one or two rules the chapter needs, in a box at the bottom, each tied to a figure above.</p></div>
+    <div class="how"><span class="how-n">4</span><h3>Three things to remember</h3><p>The edition ends with three sentences. Those are the test.</p></div>
   </div>
 </section>
 
-<section class="wrap sec" id="concepts">
-  <div class="sec-head">
-    <div>
-      <h2 class="sec-title">The core concepts</h2>
-      <p class="sec-sub">Part II of the book in {{ c_all }} ideas, in the book’s order. Each depends on the ones before it.</p>
-    </div>
-    <a class="sec-all" href="{{ site.baseurl }}/concepts/">Full track</a>
-  </div>
-  <div class="track-grid">
-    {% for t in site.data.tracks.concepts %}
-    {% if t.status == "upcoming" %}<div class="track-item is-upcoming">{% else %}{% assign ed = site.posts | where: "edition", t.edition | first %}<a class="track-item is-{{ t.status }}" href="{% if ed %}{{ site.baseurl }}{{ ed.url }}{% else %}{{ site.baseurl }}/archive/{% endif %}">{% endif %}
-      <span class="st st-{{ t.status }}">{{ t.status | upcase }}{% if t.edition %} · ED. {{ t.edition }}{% endif %}</span>
-      <h3>{{ t.name }}</h3>
-      <p>{{ t.what }}</p>
-      <span class="ch">§ {{ t.ch }}</span>
-    {% if t.status == "upcoming" %}</div>{% else %}</a>{% endif %}
-    {% endfor %}
-  </div>
-  <div class="chips">
-    <span>BROWSE BY TOPIC:</span>
-    <a class="chip" href="{{ site.baseurl }}/archive/">Computing</a>
-    <a class="chip" href="{{ site.baseurl }}/archive/">Communication</a>
-    <a class="chip" href="{{ site.baseurl }}/archive/">Sensing</a>
-    <a class="chip" href="{{ site.baseurl }}/maths/">Maths</a>
-    <a class="chip" href="{{ site.baseurl }}/glossary/">Glossary</a>
+<section class="wrap sec who" id="who">
+  <img class="who-photo" src="{{ site.baseurl }}/assets/img/profile.jpg" alt="{{ site.author }}">
+  <div>
+    <p class="sec-num">04 / THE AUTHOR</p>
+    <h2 class="sec-title">{{ site.author }}</h2>
+    <p class="who-text">Healthcare analyst by day, maths student by night, quantum beginner in public. I am Practice Leader for Healthcare &amp; Life Sciences at HFS Research and write <a href="https://mayankmadhur.in" target="_blank" rel="noopener">Healthcare Pulse</a>, a weekly newsletter on India’s health data. I am doing an MSc in Applied Mathematics on the side, which is how a book on qubits ended up on my desk.</p>
+    <a class="hero-ghost" href="{{ site.baseurl }}/about/">The full story, degrees and all</a>
   </div>
 </section>
+<script src="{{ site.baseurl }}/assets/js/figures.js" defer></script>
+<script src="{{ site.baseurl }}/assets/js/hero.js" defer></script>

@@ -1,29 +1,6 @@
 ---
-title: The maths you need
-description: The eight pieces of maths behind quantum computing, each introduced the edition it is first needed.
+title: The journey
 permalink: /maths/
 ---
-{% assign m_cov = site.data.tracks.maths | where: "status", "covered" | size %}
-<section class="wrap sec">
-  <p class="eyebrow">TRACK · REQUIRED MATHS · {{ m_cov }} OF {{ site.data.tracks.maths | size }} COVERED</p>
-  <h1 class="sec-title">The maths you need</h1>
-  <p class="sec-sub">Part I of <em>Dancing with Qubits</em>, in {{ site.data.tracks.maths | size }} topics. None of them needs more than school algebra to start. The editions cover them in the book’s order, chapters 2 to 6, so the list below is the reading order. Every maths edition ends by showing where that piece turns up in a qubit.</p>
-  <div class="callout">
-    <p><strong>The one rule to carry everywhere:</strong> a qubit is described by numbers called amplitudes, and the probability of a result is the amplitude <em>squared</em>. Every other topic on this page exists to keep that rule working as the system gets bigger.</p>
-    <p>If you remember nothing else from the maths track, remember that squaring is why amplitudes can be negative, and negative amplitudes are why quantum computers can do anything a coin cannot.</p>
-  </div>
-  <div class="track-list">
-    {% for t in site.data.tracks.maths %}
-    <div class="track-row">
-      <span class="num">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</span>
-      <div>
-        <span class="st st-{{ t.status }}">{{ t.status | upcase }}</span>
-        <h3>{{ t.name }} <span class="ch">§ {{ t.ch }}</span></h3>
-        <p>{{ t.what }}</p>
-        <p class="why">Why it is needed: {{ t.why }}</p>
-      </div>
-      {% if t.edition %}{% assign ed = site.posts | where: "edition", t.edition | first %}{% if ed %}<a class="ed-link" href="{{ site.baseurl }}{{ ed.url }}">Edition {{ t.edition }}</a>{% endif %}{% endif %}
-    </div>
-    {% endfor %}
-  </div>
-</section>
+<meta http-equiv="refresh" content="0; url={{ site.baseurl }}/#journey">
+<section class="wrap sec"><p class="eyebrow">MOVED</p><h1 class="sec-title">This page is now part of the homepage.</h1><p class="sec-sub"><a href="{{ site.baseurl }}/#journey">Go to the journey</a>.</p></section>

@@ -4,11 +4,11 @@
   var tt=document.getElementById('themeToggle');
   if(tt) tt.addEventListener('click',function(){
     var root=document.documentElement;
-    var sysDark=matchMedia('(prefers-color-scheme: dark)').matches;
-    var cur=root.getAttribute('data-theme')||(sysDark?'dark':'light');
+    var cur=root.getAttribute('data-theme')||'dark';   /* dark is the default */
     var next=cur==='dark'?'light':'dark';
     root.setAttribute('data-theme',next);
     try{localStorage.setItem('qp-theme',next);}catch(e){}
+    dispatchEvent(new Event('qp-theme'));
   });
   var nt=document.getElementById('navToggle'), nav=document.getElementById('siteNav');
   if(nt&&nav) nt.addEventListener('click',function(){

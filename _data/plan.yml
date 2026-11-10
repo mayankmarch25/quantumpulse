@@ -1,168 +1,224 @@
 # The study plan, in the book's own order. Sutor, "Dancing with Qubits" (Packt, 2019).
 # No dates on purpose: a new edition lands roughly every two weeks, and the pace varies with the chapter.
 # status: published | next | planned.   track: maths (Part I) | concepts (Part II) | framing
-# For Part I rows, "qubit" says where the maths shows up in a qubit, so every maths edition ends on a quantum idea.
+# ch = chapter label shown on the journey map.  gist = one plain line a beginner can understand.  qubit = where Part I maths shows up in a qubit.
 book:
   title: Dancing with Qubits
   author: Robert S. Sutor
   year: 2019
   publisher: Packt
 parts:
-  - name: Opening
-    label: "PREVIEW AND CHAPTER 1"
-    editions:
-      - n: 1
-        title: A bit, a coin and a qubit
-        sections: "A preview that borrows from 2.1–2.3, 6.1 and 7.1. Bits, coins, the qubit as an arrow, measurement, interference, the pulse."
-        track: framing
-        status: published
-        url: /editions/a-bit-a-coin-and-a-qubit/
-      - n: 2
-        title: Why quantum computing, and what the book promises
-        sections: "Chapter 1: the mysterious quantum bit, why quantum is different, the claimed uses in AI, finance and cryptography"
-        track: framing
-        qubit: "Sets the questions the last edition will come back to answer."
-        status: next
-  - name: "Part I · Foundations"
-    label: "THE MATHS · CHAPTERS 2 TO 6"
-    editions:
-      - n: 3
-        title: Bits, gates, adding, and what “hard” means
-        sections: "Chapter 2: what is inside a computer, powers of two, true or false, logic circuits, addition, algorithms, growth, sorting and searching"
-        track: maths
-        qubit: "Quantum gates are judged against these gates; Grover’s search is judged against 2.8.2."
-        status: planned
-      - n: 4
-        title: "Numbers: integers, remainders and continued fractions"
-        sections: "3.1–3.8: naturals to reals, structure (groups, rings, fields in passing), modular arithmetic, doubling down"
-        track: maths
-        qubit: "Shor’s algorithm is built from remainders and continued fractions."
-        status: planned
-      - n: 5
-        title: Complex numbers
-        sections: "3.9: arithmetic, conjugation, units, polynomials and roots"
-        track: maths
-        qubit: "Phase lives here. The missing direction on Edition 1’s flat circle."
-        status: planned
-      - n: 6
-        title: Planes, angles, polar coordinates and the complex plane
-        sections: "Chapter 4: functions, the real plane, trigonometry, polar coordinates, the complex plane, real three dimensions"
-        track: maths
-        qubit: "The geometry of the Bloch sphere, one axis at a time."
-        status: planned
-      - n: 7
-        title: Vectors, linear maps and matrices
-        sections: "5.1–5.6: R² and C¹, vector spaces, linear maps, matrices, matrix algebra, Cartesian products"
-        track: maths
-        qubit: "A qubit state is a vector. Every gate is a matrix."
-        status: planned
-      - n: 8
-        title: Length, unitary maps, change of basis, eigenvectors
-        sections: "5.7–5.11: inner products, norm, reflections, unitary transformations, change of basis, eigenvectors and eigenvalues, direct sums, homomorphisms"
-        track: maths
-        qubit: "Why gates can be undone, and what measuring in another direction means."
-        status: planned
-      - n: 9
-        title: Probability, randomness and expectation
-        sections: "Chapter 6: discrete probability, formal probability, error detection, randomness, expectation, Markov and Chebyshev"
-        track: maths
-        qubit: "Measurement is probabilistic; error correction is a probability argument."
-        status: planned
-  - name: "Part II · Quantum computing"
-    label: "THE CONCEPTS · CHAPTERS 7 TO 12"
-    editions:
-      - n: 10
-        title: "One qubit, properly: bras, kets and the state"
-        sections: "7.1–7.3.1: introducing quantum bits, bras and kets, quantum state representation"
-        track: concepts
-        status: planned
-      - n: 11
-        title: "Observables, expectation and the density matrix"
-        sections: "7.3.2–7.3.4: unitary matrices to standard form, the density matrix, observables and expectation"
-        track: concepts
-        status: planned
-      - n: 12
-        title: The whole Bloch sphere
-        sections: "7.4–7.5: a non-linear projection, the Bloch sphere"
-        track: concepts
-        status: planned
-      - n: 13
-        title: "Single-qubit gates: X, Y, Z, H, S, T and rotations"
-        sections: "7.6–7.7: the Pauli gates, H, Rφ, S, T, √NOT, reset, gates as unitary matrices"
-        track: concepts
-        status: planned
-      - n: 14
-        title: "Two qubits are four numbers: tensor products"
-        sections: "8.1, 8.2.1: tensor products, moving from one qubit to two"
-        track: concepts
-        status: planned
-      - n: 15
-        title: Entanglement and the Bell states
-        sections: "8.2.2–8.2.3: the general case, the density matrix again"
-        track: concepts
-        status: planned
-      - n: 16
-        title: "Gates on two and three qubits: CNOT, SWAP, CZ, Toffoli, Fredkin"
-        sections: "8.3: multi-qubit gates"
-        track: concepts
-        status: planned
-      - n: 17
-        title: "Circuits, universality, no cloning, teleportation"
-        sections: "9.1–9.3: so many gates, from gates to circuits, building blocks and universality, copying a qubit, teleportation"
-        track: concepts
-        status: planned
-      - n: 18
-        title: "Arithmetic with gates, and asking an oracle"
-        sections: "9.4–9.5: arithmetic, welcome to Delphi"
-        track: concepts
-        status: planned
-      - n: 19
-        title: "Amplitude amplification and Grover’s search"
-        sections: "9.6–9.7: flipping the sign, inversion about the mean, Grover, the oracle, the data problem"
-        track: concepts
-        status: planned
-      - n: 20
-        title: "One query instead of many: Deutsch-Jozsa and Simon"
-        sections: "9.8–9.9: more Hadamard math, the oracle circuits, Simon’s algorithm"
-        track: concepts
-        status: planned
-      - n: 21
-        title: Roots of unity and the Quantum Fourier Transform
-        sections: "10.1: roots of unity, the formula, the circuit"
-        track: concepts
-        status: planned
-      - n: 22
-        title: "Factoring, classically, and how hard it really is"
-        sections: "10.2–10.3: the factoring problem, big integers, classical methods, how hard can that be"
-        track: concepts
-        status: planned
-      - n: 23
-        title: "Phase estimation, period finding, Shor’s algorithm"
-        sections: "10.4–10.6: phase estimation, order and period finding, modular exponentiation, the continued fraction part, Shor"
-        track: concepts
-        status: planned
-      - n: 24
-        title: "What it takes to be a qubit: photons, the double slit, polarization"
-        sections: "11.1–11.3: that’s not logical, what does it take to be a qubit, light and photons"
-        track: concepts
-        status: planned
-      - n: 25
-        title: "Decoherence: T1, T2 and the drifting arrow"
-        sections: "11.4: T1, T2 and T2*, pure versus mixed states"
-        track: concepts
-        status: planned
-      - n: 26
-        title: "Error correction and Quantum Volume"
-        sections: "11.5–11.6: bit flips, sign flips, the 9-qubit Shor code, fault tolerance, Quantum Volume"
-        track: concepts
-        status: planned
-      - n: 27
-        title: "The software stack, a simulator in forty lines, and the cat"
-        sections: "11.7–11.9: software stack and access, simulation, the cat"
-        track: concepts
-        status: planned
-      - n: 28
-        title: "Questions about the future, and the answers to Edition 2"
-        sections: "Chapter 12 and the afterword: ecosystem, applications, access, software, hardware, education"
-        track: framing
-        status: planned
+- name: Opening
+  label: PREVIEW AND CHAPTER 1
+  editions:
+  - n: 1
+    title: A bit, a coin and a qubit
+    sections: A preview that borrows from 2.1–2.3, 6.1 and 7.1. Bits, coins, the qubit as an arrow, measurement, interference, the pulse.
+    track: framing
+    status: published
+    url: /editions/a-bit-a-coin-and-a-qubit/
+    ch: Preview
+    gist: What a qubit is, in six moving pictures.
+  - n: 2
+    title: Why quantum computing, and what the book promises
+    sections: 'Chapter 1: the mysterious quantum bit, why quantum is different, the claimed uses in AI, finance and cryptography'
+    track: framing
+    qubit: Sets the questions the last edition will come back to answer.
+    status: next
+    ch: Ch 1
+    gist: Why anyone bothers, and what the book promises to deliver.
+- name: Part I · Foundations
+  label: THE MATHS · CHAPTERS 2 TO 6
+  editions:
+  - n: 3
+    title: Bits, gates, adding, and what “hard” means
+    sections: 'Chapter 2: what is inside a computer, powers of two, true or false, logic circuits, addition, algorithms, growth, sorting and searching'
+    track: maths
+    qubit: Quantum gates are judged against these gates; Grover’s search is judged against 2.8.2.
+    status: planned
+    ch: Ch 2
+    gist: How ordinary computers think, so the quantum ones have something to beat.
+  - n: 4
+    title: 'Numbers: integers, remainders and continued fractions'
+    sections: '3.1–3.8: naturals to reals, structure (groups, rings, fields in passing), modular arithmetic, doubling down'
+    track: maths
+    qubit: Shor’s algorithm is built from remainders and continued fractions.
+    status: planned
+    ch: Ch 3 · 3.1–3.8
+    gist: Whole numbers, remainders and clock arithmetic. Shor will need them.
+  - n: 5
+    title: Complex numbers
+    sections: '3.9: arithmetic, conjugation, units, polynomials and roots'
+    track: maths
+    qubit: Phase lives here. The missing direction on Edition 1’s flat circle.
+    status: planned
+    ch: Ch 3 · 3.9
+    gist: Numbers with a direction. This is where phase lives.
+  - n: 6
+    title: Planes, angles, polar coordinates and the complex plane
+    sections: 'Chapter 4: functions, the real plane, trigonometry, polar coordinates, the complex plane, real three dimensions'
+    track: maths
+    qubit: The geometry of the Bloch sphere, one axis at a time.
+    status: planned
+    ch: Ch 4
+    gist: Angles, circles and the plane the complex numbers live on.
+  - n: 7
+    title: Vectors, linear maps and matrices
+    sections: '5.1–5.6: R² and C¹, vector spaces, linear maps, matrices, matrix algebra, Cartesian products'
+    track: maths
+    qubit: A qubit state is a vector. Every gate is a matrix.
+    status: planned
+    ch: Ch 5 · 5.1–5.6
+    gist: Lists of numbers and the grids that move them. A qubit is a list; a gate is a grid.
+  - n: 8
+    title: Length, unitary maps, change of basis, eigenvectors
+    sections: '5.7–5.11: inner products, norm, reflections, unitary transformations, change of basis, eigenvectors and eigenvalues, direct sums, homomorphisms'
+    track: maths
+    qubit: Why gates can be undone, and what measuring in another direction means.
+    status: planned
+    ch: Ch 5 · 5.7–5.11
+    gist: Why gates can be undone, and what measuring in another direction means.
+  - n: 9
+    title: Probability, randomness and expectation
+    sections: 'Chapter 6: discrete probability, formal probability, error detection, randomness, expectation, Markov and Chebyshev'
+    track: maths
+    qubit: Measurement is probabilistic; error correction is a probability argument.
+    status: planned
+    ch: Ch 6
+    gist: Chance done properly. Measurement is a probability.
+- name: Part II · Quantum computing
+  label: THE CONCEPTS · CHAPTERS 7 TO 12
+  editions:
+  - n: 10
+    title: 'One qubit, properly: bras, kets and the state'
+    sections: '7.1–7.3.1: introducing quantum bits, bras and kets, quantum state representation'
+    track: concepts
+    status: planned
+    ch: Ch 7 · 7.1–7.3.1
+    gist: The qubit again, this time with the real notation.
+  - n: 11
+    title: Observables, expectation and the density matrix
+    sections: '7.3.2–7.3.4: unitary matrices to standard form, the density matrix, observables and expectation'
+    track: concepts
+    status: planned
+    ch: Ch 7 · 7.3.2–7.3.4
+    gist: Measuring from other angles, and qubits you only partly know.
+  - n: 12
+    title: The whole Bloch sphere
+    sections: '7.4–7.5: a non-linear projection, the Bloch sphere'
+    track: concepts
+    status: planned
+    ch: Ch 7 · 7.4–7.5
+    gist: The full sphere, with phase on it at last.
+  - n: 13
+    title: 'Single-qubit gates: X, Y, Z, H, S, T and rotations'
+    sections: '7.6–7.7: the Pauli gates, H, Rφ, S, T, √NOT, reset, gates as unitary matrices'
+    track: concepts
+    status: planned
+    ch: Ch 7 · 7.6–7.7
+    gist: The small set of moves you can make on one qubit.
+  - n: 14
+    title: 'Two qubits are four numbers: tensor products'
+    sections: '8.1, 8.2.1: tensor products, moving from one qubit to two'
+    track: concepts
+    status: planned
+    ch: Ch 8 · 8.1–8.2.1
+    gist: Two qubits are four numbers, not two pairs.
+  - n: 15
+    title: Entanglement and the Bell states
+    sections: '8.2.2–8.2.3: the general case, the density matrix again'
+    track: concepts
+    status: planned
+    ch: Ch 8 · 8.2
+    gist: When two qubits cannot be described separately.
+  - n: 16
+    title: 'Gates on two and three qubits: CNOT, SWAP, CZ, Toffoli, Fredkin'
+    sections: '8.3: multi-qubit gates'
+    track: concepts
+    status: planned
+    ch: Ch 8 · 8.3
+    gist: Moves that act on two or three qubits at once.
+  - n: 17
+    title: Circuits, universality, no cloning, teleportation
+    sections: '9.1–9.3: so many gates, from gates to circuits, building blocks and universality, copying a qubit, teleportation'
+    track: concepts
+    status: planned
+    ch: Ch 9 · 9.1–9.3
+    gist: Wiring gates into circuits, and why you cannot copy a qubit.
+  - n: 18
+    title: Arithmetic with gates, and asking an oracle
+    sections: '9.4–9.5: arithmetic, welcome to Delphi'
+    track: concepts
+    status: planned
+    ch: Ch 9 · 9.4–9.5
+    gist: Adding numbers with gates, and asking a black box a question.
+  - n: 19
+    title: Amplitude amplification and Grover’s search
+    sections: '9.6–9.7: flipping the sign, inversion about the mean, Grover, the oracle, the data problem'
+    track: concepts
+    status: planned
+    ch: Ch 9 · 9.6–9.7
+    gist: Boosting the right answer. The first real speed-up.
+  - n: 20
+    title: 'One query instead of many: Deutsch-Jozsa and Simon'
+    sections: '9.8–9.9: more Hadamard math, the oracle circuits, Simon’s algorithm'
+    track: concepts
+    status: planned
+    ch: Ch 9 · 9.8–9.9
+    gist: The first problems where one quantum question beats many classical ones.
+  - n: 21
+    title: Roots of unity and the Quantum Fourier Transform
+    sections: '10.1: roots of unity, the formula, the circuit'
+    track: concepts
+    status: planned
+    ch: Ch 10 · 10.1
+    gist: The transform behind everything in Part II’s second half.
+  - n: 22
+    title: Factoring, classically, and how hard it really is
+    sections: '10.2–10.3: the factoring problem, big integers, classical methods, how hard can that be'
+    track: concepts
+    status: planned
+    ch: Ch 10 · 10.2–10.3
+    gist: Why factoring is hard for ordinary computers.
+  - n: 23
+    title: Phase estimation, period finding, Shor’s algorithm
+    sections: '10.4–10.6: phase estimation, order and period finding, modular exponentiation, the continued fraction part, Shor'
+    track: concepts
+    status: planned
+    ch: Ch 10 · 10.4–10.6
+    gist: The algorithm that started the field.
+  - n: 24
+    title: 'What it takes to be a qubit: photons, the double slit, polarization'
+    sections: '11.1–11.3: that’s not logical, what does it take to be a qubit, light and photons'
+    track: concepts
+    status: planned
+    ch: Ch 11 · 11.1–11.3
+    gist: What a physical qubit is made of, and why light behaves oddly.
+  - n: 25
+    title: 'Decoherence: T1, T2 and the drifting arrow'
+    sections: '11.4: T1, T2 and T2*, pure versus mixed states'
+    track: concepts
+    status: planned
+    ch: Ch 11 · 11.4
+    gist: How fast a real qubit forgets.
+  - n: 26
+    title: Error correction and Quantum Volume
+    sections: '11.5–11.6: bit flips, sign flips, the 9-qubit Shor code, fault tolerance, Quantum Volume'
+    track: concepts
+    status: planned
+    ch: Ch 11 · 11.5–11.6
+    gist: Catching errors you are not allowed to look at.
+  - n: 27
+    title: The software stack, a simulator in forty lines, and the cat
+    sections: '11.7–11.9: software stack and access, simulation, the cat'
+    track: concepts
+    status: planned
+    ch: Ch 11 · 11.7–11.9
+    gist: The software, a tiny simulator, and the famous cat.
+  - n: 28
+    title: Questions about the future, and the answers to Edition 2
+    sections: 'Chapter 12 and the afterword: ecosystem, applications, access, software, hardware, education'
+    track: framing
+    status: planned
+    ch: Ch 12
+    gist: What is next, and the answers to the questions from stop 2.

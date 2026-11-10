@@ -1,27 +1,6 @@
 ---
-title: The core concepts
-description: Twelve core ideas in quantum computing, from bit to error correction, in the order they depend on each other.
+title: The journey
 permalink: /concepts/
 ---
-{% assign c_cov = site.data.tracks.concepts | where: "status", "covered" | size %}
-<section class="wrap sec">
-  <p class="eyebrow">TRACK · CORE CONCEPTS · {{ c_cov }} OF {{ site.data.tracks.concepts | size }} COVERED</p>
-  <h1 class="sec-title">The core concepts</h1>
-  <p class="sec-sub">Part II of <em>Dancing with Qubits</em>, chapters 7 to 11, in {{ site.data.tracks.concepts | size }} ideas and in the book’s order. You cannot understand entanglement without two qubits, or two qubits without one, so the order is fixed. Covered means an edition exists. Introduced means it appeared in a picture but has not had its own edition yet.</p>
-  <div class="callout">
-    <p><strong>The thread through all twelve:</strong> a qubit is an arrow, not a switch. Everything hard in quantum computing is about what happens to arrows when you rotate them, combine them, and finally look at them.</p>
-  </div>
-  <div class="track-list">
-    {% for t in site.data.tracks.concepts %}
-    <div class="track-row">
-      <span class="num">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</span>
-      <div>
-        <span class="st st-{{ t.status }}">{{ t.status | upcase }}</span>
-        <h3>{{ t.name }} <span class="ch">§ {{ t.ch }}</span></h3>
-        <p>{{ t.what }}</p>
-      </div>
-      {% if t.edition %}{% assign ed = site.posts | where: "edition", t.edition | first %}{% if ed %}<a class="ed-link" href="{{ site.baseurl }}{{ ed.url }}">Edition {{ t.edition }}</a>{% endif %}{% endif %}
-    </div>
-    {% endfor %}
-  </div>
-</section>
+<meta http-equiv="refresh" content="0; url={{ site.baseurl }}/#journey">
+<section class="wrap sec"><p class="eyebrow">MOVED</p><h1 class="sec-title">This page is now part of the homepage.</h1><p class="sec-sub"><a href="{{ site.baseurl }}/#journey">Go to the journey</a>.</p></section>

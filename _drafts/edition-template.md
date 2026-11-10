@@ -7,6 +7,18 @@ tags: [Computing]
 maths: [Complex numbers]
 read_time: 10
 next_title: "Edition 3: ..."
+summary:
+  - "Line one. The whole idea in plain words."
+  - "Line two."
+  - "Line three."
+outcomes:
+  - "Something the reader can now do or explain"
+  - "Another"
+terms: [Term, Term]
+remember:
+  - "Sentence one."
+  - "Sentence two."
+  - "Sentence three."
 ---
 <div class="jump">
 <span>IN THIS EDITION</span>

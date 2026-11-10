@@ -7,6 +7,19 @@ tags: [Computing, Qubit, Superposition, Measurement]
 maths: [Vectors, Probability]
 read_time: 12
 next_title: "Edition 2: Why quantum computing, and what the book promises"
+summary:
+  - "A bit is a switch: 0 or 1, and looking at it changes nothing."
+  - "A coin is a probability: one flip tells you one result, many flips tell you the odds."
+  - "A qubit is an arrow: the angle sets the odds, and looking at it snaps it to an end."
+outcomes:
+  - "Say what a qubit is without using the word “both”"
+  - "Explain why one measurement tells you almost nothing, and a tally tells you a lot"
+  - "Show, with real numbers, why a qubit is not a fancy coin"
+terms: [Bit, Qubit, Superposition, Amplitude, Measurement, Interference, Pulse]
+remember:
+  - "Probability is amplitude squared. That one rule carries the whole subject."
+  - "Measuring snaps the arrow to 0 or 1 and throws the angle away. To learn the angle you need many fresh copies."
+  - "Amplitudes can be negative, so they can cancel. Probabilities cannot. That is the difference between a qubit and a coin."
 ---
 <div class="jump">
 <span>IN THIS EDITION</span>

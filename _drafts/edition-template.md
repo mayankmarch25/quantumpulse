@@ -19,6 +19,10 @@ remember:
   - "Sentence one."
   - "Sentence two."
   - "Sentence three."
+sources:
+  - name: "Source name, chapter or page"
+    url: https://
+    note: "One line on what was taken from it."
 ---
 <div class="jump">
 <span>IN THIS EDITION</span>
@@ -63,6 +67,3 @@ Prose in Markdown. **Bold** for the one term being defined.
 </div>
 </div>
 
-### Where this came from
-
-- Source, chapter or page. One line on what was taken from it.

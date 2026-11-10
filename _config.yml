@@ -6,6 +6,13 @@ linkedin_profile: https://www.linkedin.com/in/mayank-madhur/
 # Create the second LinkedIn newsletter, then paste its URL here. Until then the Subscribe buttons point to the LinkedIn profile.
 linkedin_newsletter: https://www.linkedin.com/in/mayank-madhur/
 email: mayank@mayankmadhur.in
+
+# SEO and analytics hooks. Leave blank until you have the codes.
+# Google Search Console: add the site as a URL-prefix property, choose "HTML tag", paste only the content value here.
+google_site_verification: ""
+bing_site_verification: ""
+# GoatCounter (free, privacy-friendly, same as Healthcare Pulse): create a site at goatcounter.com and put its code here, e.g. quantumpulse
+goatcounter: ""
 description: Learning quantum from zero, in public. One core concept and the one piece of maths it needs, shown moving. New editions as the chapters get done.
 
 # Separate GitHub account from Healthcare Pulse.

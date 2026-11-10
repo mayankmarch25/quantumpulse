@@ -5,9 +5,8 @@ layout: null
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>{{ site.url }}{{ site.baseurl }}/</loc></url>
   <url><loc>{{ site.url }}{{ site.baseurl }}/archive/</loc></url>
-  <url><loc>{{ site.url }}{{ site.baseurl }}/maths/</loc></url>
-  <url><loc>{{ site.url }}{{ site.baseurl }}/concepts/</loc></url>
   <url><loc>{{ site.url }}{{ site.baseurl }}/glossary/</loc></url>
+  <url><loc>{{ site.url }}{{ site.baseurl }}/news/</loc></url>
   <url><loc>{{ site.url }}{{ site.baseurl }}/about/</loc></url>
   {% for post in site.posts %}<url><loc>{{ site.url }}{{ site.baseurl }}{{ post.url }}</loc><lastmod>{{ post.date | date_to_xmlschema }}</lastmod></url>
   {% endfor %}

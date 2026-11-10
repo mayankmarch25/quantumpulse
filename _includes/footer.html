@@ -7,3 +7,4 @@
 <footer class="site-footer"><p>© {{ 'now' | date: '%Y' }} {{ site.title }} by {{ site.author }} · <a href="mailto:{{ site.email }}">{{ site.email }}</a> · I am learning as I write. If you find a mistake, tell me.</p></footer>
 <button id="toTop" class="to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg></button>
 <script src="{{ site.baseurl }}/assets/js/site.js" defer></script>
+{% if site.goatcounter != "" %}<script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>{% endif %}

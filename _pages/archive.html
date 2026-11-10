@@ -1,22 +1,33 @@
 ---
 title: All editions
+description: Every edition of Quantum Pulse, newest first, with a number strip to jump to any edition in the 28-edition plan.
 permalink: /archive/
 ---
+{% assign plan = site.data.plan %}
+{% assign total = 0 %}{% for part in plan.parts %}{% assign total = total | plus: part.editions.size %}{% endfor %}
 <section class="wrap sec">
-  <p class="eyebrow">THE FULL ARCHIVE</p>
-  <h1 class="sec-title">Every edition of {{ site.title }}</h1>
-  <p class="sec-sub" style="margin-bottom:22px">Newest first. Each edition names the concept it covers and the maths it uses.</p>
-  <ul class="archive-list">
-    {% for post in site.posts %}
-    <li class="archive-item">
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        <span class="ai-ed">ED. {{ post.edition }}</span>
-        <span>
-          <span class="ai-title">{{ post.title }}</span>
-          <span class="ai-meta">{{ post.date | date: "%b %-d, %Y" }} · {{ post.category }}{% if post.maths %} · Maths: {{ post.maths | join: ", " }}{% endif %}</span>
-        </span>
-      </a>
-    </li>
+  <p class="eyebrow">ALL EDITIONS · {{ site.posts | size }} PUBLISHED SO FAR</p>
+  <h1 class="sec-title">Every edition</h1>
+  <p class="sec-sub">Newest first. The number strip grows as editions are published; click a number to open that edition. What is coming next is on the <a href="{{ site.baseurl }}/#journey">plan</a>.</p>
+
+  <div class="numstrip" aria-label="Jump to an edition">
+    {% assign ordered = site.posts | sort: "edition" %}
+    {% for post in ordered %}
+      {% assign row = nil %}{% for part in plan.parts %}{% for e in part.editions %}{% if e.n == post.edition %}{% assign row = e %}{% endif %}{% endfor %}{% endfor %}
+      <a class="num is-pub t-{{ row.track | default: 'concepts' }}" href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">{{ post.edition }}</a>
     {% endfor %}
-  </ul>
+  </div>
+
+  <div class="ed-grid" style="margin-top:26px">
+    {% for post in site.posts %}
+    {% assign row = nil %}{% for part in plan.parts %}{% for e in part.editions %}{% if e.n == post.edition %}{% assign row = e %}{% endif %}{% endfor %}{% endfor %}
+    <a class="ed-card{% if row.track == 'maths' %} cat-maths{% elsif row.track == 'framing' %} cat-track{% endif %}" href="{{ site.baseurl }}{{ post.url }}">
+      <div class="ed-meta"><b>ED. {{ post.edition }}</b>{% if row %}<span>{{ row.ch | upcase }}</span>{% endif %}<span>{{ post.date | date: "%-d %b %Y" | upcase }}</span></div>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.description | truncate: 160 }}</p>
+      <div class="ed-tags">{% if post.maths %}{% for m in post.maths %}<span>{{ m }}</span>{% endfor %}{% endif %}{% if post.read_time %}<span>{{ post.read_time }} min</span>{% endif %}</div>
+      <span class="ed-go">Read</span>
+    </a>
+    {% endfor %}
+  </div>
 </section>

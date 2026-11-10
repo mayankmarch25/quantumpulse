@@ -20,6 +20,16 @@ remember:
   - "Probability is amplitude squared. This one rule runs the whole subject."
   - "Measuring snaps the arrow to 0 or 1 and the angle is lost. To learn the angle you need many fresh copies."
   - "Amplitudes can be negative, so they can cancel. Probabilities cannot. That is the difference between a qubit and a coin."
+sources:
+  - name: "Nielsen and Chuang, Quantum Computation and Quantum Information, Chapter 1"
+    url: https://doi.org/10.1017/CBO9780511976667
+    note: "The standard textbook. The arrow and the two rules are its opening pages, in heavier notation."
+  - name: "Matuschak and Nielsen, Quantum Country: Quantum computing for the very curious"
+    url: https://quantum.country/qcvc
+    note: "Free, online. The clearest treatment of amplitudes versus probabilities I have found."
+  - name: "IBM Quantum Learning, Basics of quantum information"
+    url: https://quantum.cloud.ibm.com/learning/courses/basics-of-quantum-information
+    note: "Free course that starts from the same two rules."
 ---
 <div class="jump">
 <span>IN THIS EDITION</span>
@@ -145,10 +155,3 @@ The two contributions to <span class="k">b</span> are equal and opposite, so the
 </div>
 </div>
 
-### Where this came from
-
-- Nielsen and Chuang, *Quantum Computation and Quantum Information*, Chapter 1. The standard textbook; the arrow and the two rules are its opening pages, in heavier notation.
-- Matuschak and Nielsen, *Quantum Country*, “Quantum computing for the very curious”. Free, online, and the clearest treatment of amplitudes versus probabilities I have found.
-- IBM Quantum Learning, “Basics of quantum information”. Free course that starts from the same two rules.
-
-<p class="small-note">Nothing above is copied from these sources. The pictures and numbers are my own. If you find a mistake, write to me and I will add the correction here with a date.</p>

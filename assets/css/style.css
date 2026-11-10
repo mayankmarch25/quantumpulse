@@ -59,7 +59,7 @@ img { max-width: 100%; }
 }
 .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .mark { width: 46px; height: 46px; flex: none; border-radius: 12px; background: var(--grad); display: grid; place-items: center; }
-.mark svg { width: 34px; height: 22px; }
+.mark svg { width: 36px; height: 36px; }
 .logo-name { display: block; font-weight: 800; font-size: 22px; color: var(--ink); letter-spacing: -.3px; line-height: 1.05; }
 .logo-tag { display: block; font-size: 12.5px; color: var(--muted); }
 .site-header nav { display: flex; gap: 20px; align-items: center; }
@@ -487,3 +487,23 @@ body { background-image: radial-gradient(var(--grid) 1px, transparent 1px); back
   .tl-end { margin-left: 0; } .tl-end::before { left: 9px; }
   .tl-card .news-meta { flex-wrap: wrap; }
 }
+
+/* v7: diagram mark in the header (favicon keeps the square mark) */
+.logo .mark-d { width: 60px; height: 60px; flex: none; color: var(--ink); filter: drop-shadow(0 0 10px rgba(107,134,255,.35)); }
+:root[data-theme="light"] .logo .mark-d { filter: none; }
+.logo .mark-d text { font-weight: 600; }
+@media (max-width: 720px) { .logo .mark-d { width: 44px; height: 44px; } }
+
+
+/* v8: editions archive */
+.numstrip { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+.num { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; font-family: var(--mono); font-size: 12.5px; font-weight: 600; text-decoration: none; color: var(--muted); border: 1px solid var(--line); background: transparent; }
+.num.is-pub { color: #fff; border-color: transparent; }
+.num.is-pub.t-concepts, .num.is-pub.t-framing { background: var(--cobalt); box-shadow: 0 0 14px rgba(107,134,255,.4); }
+.num.is-pub.t-maths { background: var(--gold); color: #111; box-shadow: 0 0 14px rgba(224,176,76,.4); }
+.num.is-pub:hover { filter: brightness(1.12); }
+.num.is-next { border-style: dashed; border-color: var(--gold); color: var(--gold); }
+.ed-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+.ed-tags span { font-family: var(--mono); font-size: 10.5px; letter-spacing: 1px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 3px 8px; }
+.here-all { color: #B7E7F0; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.here-all:hover { color: #fff; }

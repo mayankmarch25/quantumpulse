@@ -11,7 +11,7 @@
   "datePublished": "{{ page.date | date_to_xmlschema }}",
   "dateModified": "{{ page.date | date_to_xmlschema }}",
   "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
-  "image": "{{ site.url }}{{ site.baseurl }}/logo.png",
+  "image": "{{ site.url }}{{ site.baseurl }}/assets/img/og.png",
   "inLanguage": "en",
   "author": { "@type": "Person", "name": "{{ site.author }}", "url": "{{ site.linkedin_profile }}" },
   "publisher": { "@type": "Organization", "name": "{{ site.title }}", "logo": { "@type": "ImageObject", "url": "{{ site.url }}{{ site.baseurl }}/logo.png" } }
@@ -55,6 +55,13 @@
     <div class="ed-body">{{ content }}
     {% if page.remember %}
     <div class="remember"><span class="brief-lbl">THREE THINGS TO REMEMBER</span><ol>{% for r in page.remember %}<li>{{ r }}</li>{% endfor %}</ol></div>
+    {% endif %}
+    {% if page.sources %}
+    <section class="sources" aria-label="Sources">
+      <span class="brief-lbl">SOURCES FOR THIS EDITION</span>
+      <ol>{% for s in page.sources %}<li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.name }}</a>{% if s.note %}<span> · {{ s.note }}</span>{% endif %}</li>{% endfor %}</ol>
+      <p class="sources-note">Nothing on this page is copied from these sources. The pictures and numbers are my own. If you find a mistake, write to me and the correction will be added here with a date.</p>
+    </section>
     {% endif %}
     </div>
   </div>
